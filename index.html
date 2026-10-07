@@ -359,9 +359,9 @@
 
   /* ---------- founders ---------- */
   .founders{list-style:none;padding:0;margin:2.4em 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;}
-  .founder{display:flex;flex-direction:column;align-items:flex-start;gap:6px;border:1px solid var(--line);border-radius:4px;background:var(--surface);padding:22px 20px 24px;}
-  .avatar{width:64px;height:64px;border-radius:50%;background:var(--accent);color:var(--on-accent);display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-weight:700;font-size:1.05rem;letter-spacing:0.04em;margin-bottom:8px;}
-  .founder:nth-child(2n) .avatar{background:var(--accent-2);}
+  .founder{display:flex;flex-direction:column;align-items:flex-start;gap:6px;border:1px solid var(--line);border-radius:4px;background:var(--surface);padding:0 0 22px;overflow:hidden;}
+  .founder > span{padding-inline:18px;}
+  .f-photo{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;background:var(--surface-2);margin-bottom:12px;}
   .f-name{font-family:'Big Shoulders Display',sans-serif;font-weight:700;font-size:1.45rem;line-height:1.1;}
   .f-role{font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft);}
 
@@ -934,11 +934,11 @@
     <h2 class="demo-h2">The team behind Yeonrak</h2>
     <p class="prose">Yeonrak (연락) was founded as a class project by Team 2 in Innovation and Corporate Transformation at Yonsei GSIS, Fall 2026.</p>
     <ul class="founders">
-      <li class="founder"><span class="avatar" aria-hidden="true">MK</span><span class="f-name">Mimi Kim Mireu</span><span class="f-role">Co-founder</span></li>
-      <li class="founder"><span class="avatar" aria-hidden="true">GU</span><span class="f-name">Gerry Unger</span><span class="f-role">Co-founder</span></li>
-      <li class="founder"><span class="avatar" aria-hidden="true">PA</span><span class="f-name">Pia Antunez Giachero</span><span class="f-role">Co-founder</span></li>
-      <li class="founder"><span class="avatar" aria-hidden="true">KJ</span><span class="f-name">Kenza Jbiha</span><span class="f-role">Co-founder</span></li>
-      <li class="founder"><span class="avatar" aria-hidden="true">DC</span><span class="f-name">Donny Chen Yi Tang</span><span class="f-role">Co-founder</span></li>
+      <li class="founder"><img class="f-photo" src="founders/donny.jpg" alt="Donny Chen Yi Tang" loading="lazy" style="object-position:28% 30%"><span class="f-name">Donny Chen Yi Tang</span><span class="f-role">Co-founder</span></li>
+      <li class="founder"><img class="f-photo" src="founders/gerry.jpg" alt="Gerry Unger" loading="lazy" style="object-position:50% 40%"><span class="f-name">Gerry Unger</span><span class="f-role">Co-founder</span></li>
+      <li class="founder"><img class="f-photo" src="founders/kenza.jpg" alt="Kenza Jbiha" loading="lazy" style="object-position:50% 35%"><span class="f-name">Kenza Jbiha</span><span class="f-role">Co-founder</span></li>
+      <li class="founder"><img class="f-photo" src="founders/mimi.jpg" alt="Mimi Kim Mireu" loading="lazy" style="object-position:45% 35%"><span class="f-name">Mimi Kim Mireu</span><span class="f-role">Co-founder</span></li>
+      <li class="founder"><img class="f-photo" src="founders/pia.jpg" alt="Pia Antunez Giachero" loading="lazy" style="object-position:62% 35%"><span class="f-name">Pia Antunez Giachero</span><span class="f-role">Co-founder</span></li>
     </ul>
     <div class="fit-box">
       <p class="eyebrow">What we set out to do</p>
@@ -951,7 +951,7 @@
 
 <footer class="wrap">
   <span>Prepared for Innovation &amp; Corporate Transformation, Team 2 — Playing to Win.</span>
-  <span>Mimi Kim Mireu · Gerry Unger · Pia Antunez Giachero · Kenza Jbiha · Donny Chen Yi Tang</span>
+  <span>Donny Chen Yi Tang · Gerry Unger · Kenza Jbiha · Mimi Kim Mireu · Pia Antunez Giachero</span>
 </footer>
 
 <script>
