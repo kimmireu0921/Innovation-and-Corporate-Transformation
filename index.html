@@ -1,3 +1,5 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Yeonrak</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Space+Mono:wght@400;700&display=swap">
 <style>
@@ -98,16 +100,6 @@
   section.invert{background:var(--invert-bg);color:var(--invert-ink);border-top-color:var(--invert-line);}
   section.invert .eyebrow{color:var(--accent);}
   section.invert .eyebrow::before{background:var(--accent);}
-
-  /* ---------- top bar ---------- */
-  .topwrap{padding-block:22px;border-bottom:none;}
-  .topbar{
-    display:flex;justify-content:space-between;align-items:center;
-    font-family:'Space Mono',monospace;font-size:0.78rem;letter-spacing:0.06em;
-    color:var(--ink-soft);
-  }
-  .topbar .mark{color:var(--ink);font-weight:700;}
-  .topbar .mark b{color:var(--accent);}
 
   /* ---------- buttons ---------- */
   .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:1.8em;}
@@ -279,6 +271,238 @@
     font-family:'Space Mono',monospace;font-size:0.75rem;color:var(--ink-soft);
   }
 
+  /* ---------- class banner ---------- */
+  .class-banner{background:var(--invert-bg);color:var(--invert-soft);font-family:'Space Mono',monospace;font-size:0.72rem;letter-spacing:0.03em;line-height:1.5;}
+  .class-banner .wrap{padding-block:9px;text-align:center;}
+  .class-banner b{color:var(--invert-ink);font-weight:700;}
+  .cb-short{display:none;}
+  section{scroll-margin-top:110px;}
+
+  /* ---------- view tabs ---------- */
+  .site-header{position:sticky;top:0;z-index:50;}
+  .navbar{background:var(--bg);border-bottom:1px solid var(--line);box-shadow:0 1px 0 var(--line), 0 6px 16px rgba(10,23,48,0.06);}
+  .navbar-inner{display:flex;align-items:stretch;gap:24px;}
+  .navbar .mark{display:flex;align-items:center;text-decoration:none;color:var(--ink);font-family:'Space Mono',monospace;font-weight:700;font-size:0.82rem;letter-spacing:0.06em;white-space:nowrap;}
+  .navbar .mark b{color:var(--accent);margin-left:0.4em;}
+  .view-tabs{display:flex;flex:1;justify-content:flex-end;}
+  .view-tab{
+    flex:0 1 190px;display:flex;align-items:center;justify-content:center;gap:0.5em;
+    padding:16px 12px 13px;border-bottom:3px solid transparent;
+    text-decoration:none;color:var(--ink-soft);white-space:nowrap;
+    font-family:'Big Shoulders Display',sans-serif;font-weight:700;font-size:1.25rem;letter-spacing:0.01em;
+    transition:color .15s ease, background-color .15s ease, border-color .15s ease;
+  }
+  .view-tab .vt-n{font-family:'Space Mono',monospace;font-size:0.68rem;font-weight:400;color:var(--ink-soft);}
+  .view-tab:hover{color:var(--ink);background:var(--surface);}
+  .view-tab.is-active{color:var(--accent);border-bottom-color:var(--accent);background:color-mix(in srgb, var(--accent) 8%, var(--bg));}
+  .view-tab.is-active .vt-n{color:var(--accent);}
+  .view-tab:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;}
+  main[hidden]{display:none;}
+
+  /* ---------- strategy view ---------- */
+  .cascade{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:2.2em;}
+  .cas{display:flex;flex-direction:column;gap:4px;padding:14px 14px 16px;border:1px solid var(--line);border-radius:4px;text-decoration:none;color:inherit;position:relative;}
+  .cas b{font-family:'Big Shoulders Display',sans-serif;font-size:1.2rem;line-height:1.1;}
+  .cas .cn{font-family:'Space Mono',monospace;font-size:0.72rem;color:var(--accent);font-weight:700;}
+  .cas .cs{font-family:'Space Mono',monospace;font-size:0.66rem;letter-spacing:0.04em;text-transform:uppercase;color:var(--ink-soft);}
+  .cas.done{background:color-mix(in srgb, var(--accent) 8%, var(--bg));border-color:color-mix(in srgb, var(--accent) 45%, var(--line));}
+  .cas.done:hover{border-color:var(--accent);}
+  .cas.next{border-style:dashed;color:var(--ink-soft);}
+  .cas.next .cn{color:var(--ink-soft);}
+  .ev-list{margin-top:2em;border-top:1px solid var(--line);max-width:860px;}
+  .ev-list .ev-row{grid-template-columns:90px 1fr;}
+  .statement.wtp .stm-row .how.no{color:var(--danger);}
+  .wtp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:2em;}
+  .rule-card{border:1px solid var(--line);border-radius:4px;padding:20px 20px 22px;background:var(--surface);}
+  .rule-card h3{font-size:1.3rem;line-height:1.15;}
+  .rule-card p:not(.eyebrow), .rule-card li{color:var(--ink-soft);font-size:0.96rem;}
+  .rule-card p:not(.eyebrow){margin:0.6em 0 0;}
+  .ticks{margin:0;padding-left:1.1em;display:flex;flex-direction:column;gap:6px;}
+  .phases{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:2em;border:1px solid var(--line);border-radius:4px;overflow:hidden;}
+  .phase{display:flex;flex-direction:column;gap:3px;padding:16px 18px;border-right:1px solid var(--line);}
+  .phase:last-child{border-right:none;}
+  .phase:first-child{background:color-mix(in srgb, var(--accent) 10%, var(--bg));}
+  .phase .pn{font-size:0.7rem;color:var(--accent);font-weight:700;letter-spacing:0.08em;}
+  .phase b{font-family:'Big Shoulders Display',sans-serif;font-size:1.15rem;}
+  .phase span:last-child{font-size:0.9rem;color:var(--ink-soft);}
+  #strategyView section h2:not(.demo-h2){font-size:clamp(1.9rem,3.8vw,2.8rem);line-height:1.05;}
+  blockquote.manifesto.htw-statement{font-size:clamp(1.2rem,2.2vw,1.65rem);margin-top:1.4em;max-width:34em;}
+  .plates.five{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));}
+  .qa-compare{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:2em;}
+  .qa{border:1px solid var(--line);border-radius:4px;padding:18px 20px;background:var(--bg);}
+  .qa .q{font-family:'Big Shoulders Display',sans-serif;font-weight:700;font-size:1.45rem;line-height:1.15;margin:0.6em 0 0;}
+  .sub-h{font-size:1.6rem;margin-top:2.2em;}
+  .sub-h + .statement, .sub-h + .plates{margin-top:1em;}
+  .plate-key{border-color:var(--accent);background:color-mix(in srgb, var(--accent) 9%, var(--surface));}
+  .plate-key .tag{color:var(--accent);font-weight:700;}
+  .fit-box{margin-top:2.4em;border-left:3px solid var(--accent-2);padding:4px 0 4px 20px;max-width:70ch;}
+  .fit-box p:not(.eyebrow){margin:0;font-size:1.08rem;}
+  .fit-box .eyebrow{color:var(--accent-2);}
+  .fit-box .eyebrow::before{background:var(--accent-2);}
+  @media (max-width:800px){
+    .cascade{grid-template-columns:1fr 1fr;}
+    .phases{grid-template-columns:1fr 1fr;}
+    .phase{border-bottom:1px solid var(--line);}
+    .qa-compare{grid-template-columns:1fr;}
+    .statement.wtp .stm-row .how.no::before{content:"Not: ";font-weight:700;}
+  }
+  @media (max-width:640px){
+    .cb-long{display:none;}
+    .cb-short{display:inline;}
+    .navbar .wrap{padding-inline:0;}
+    .navbar .mark{display:none;}
+    .view-tabs{justify-content:stretch;}
+    .view-tab{flex:1 1 0;font-size:1.1rem;padding:13px 6px 10px;}
+    section{scroll-margin-top:96px;}
+  }
+
+  /* ---------- demo layout ---------- */
+  .demo-section{padding-top:clamp(24px,4vw,48px);}
+  .demo-h2{font-size:clamp(2rem,4.4vw,3.2rem);}
+  .scn-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:2em;}
+  .scn-tab{
+    all:unset;box-sizing:border-box;cursor:pointer;
+    font-family:'Space Mono',monospace;font-size:0.78rem;
+    padding:0.6em 1em;border:1px solid var(--line);border-radius:20px;color:var(--ink-soft);
+  }
+  .scn-tab:hover{border-color:var(--accent);}
+  .scn-tab[aria-selected="true"]{border-color:var(--accent);background:color-mix(in srgb, var(--accent) 14%, var(--bg));color:var(--ink);font-weight:700;}
+  .scn-tab:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+
+  .demo-stage{display:grid;grid-template-columns:1fr auto;gap:clamp(28px,5vw,72px);margin-top:2em;align-items:start;}
+  .scn-row{font-family:'Space Mono',monospace;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-2);margin:0;}
+  .scn-title{font-size:clamp(1.6rem,3vw,2.2rem);margin-top:0.3em;}
+  .scn-summary{color:var(--ink-soft);max-width:56ch;margin:0.6em 0 0;}
+  .step-list{list-style:none;padding:0;margin:1.6em 0 0;display:flex;flex-direction:column;border-top:1px solid var(--line);}
+  .step-list li{border-bottom:1px solid var(--line);}
+  .step-list button{
+    all:unset;box-sizing:border-box;cursor:pointer;width:100%;
+    display:grid;grid-template-columns:2.4em 1fr;gap:8px;padding:10px 4px;color:var(--ink-soft);font-size:0.97rem;
+  }
+  .step-list button:hover{color:var(--ink);}
+  .step-list button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;}
+  .step-list .sn{font-family:'Space Mono',monospace;font-size:0.8rem;padding-top:0.15em;}
+  .step-list li.is-current button{color:var(--ink);font-weight:700;}
+  .step-list li.is-current .sn{color:var(--accent);}
+  .step-list li.is-done .sn{color:var(--accent-2);}
+  .step-note{margin-top:1.4em;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:4px;padding:16px 18px;}
+  .step-note p{margin:0;font-size:0.98rem;}
+  .step-note-label{font-family:'Space Mono',monospace;font-size:0.66rem !important;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:4px !important;}
+  .step-note-label.why{margin-top:12px !important;color:var(--accent-2);}
+  #stepWhy{color:var(--ink-soft);}
+  .demo-controls{display:flex;gap:10px;margin-top:1.2em;}
+  .demo-controls .btn:disabled{opacity:0.4;cursor:default;filter:none;}
+
+  /* ---------- phone frame ---------- */
+  .phone-wrap{display:flex;flex-direction:column;align-items:center;gap:12px;position:sticky;top:116px;}
+  .phone{
+    position:relative;width:320px;height:660px;border-radius:48px;padding:12px;
+    background:#0B0F17;box-shadow:0 0 0 2px #2A3242, 0 24px 60px rgba(10,23,48,0.28);
+  }
+  .phone-island{position:absolute;top:22px;left:50%;transform:translateX(-50%);width:96px;height:28px;border-radius:16px;background:#000;z-index:5;}
+  .phone-screen{
+    --p-bg:#FFFFFF;--p-surface:#F2F5FA;--p-ink:#0A1730;--p-soft:#5A6880;--p-line:#E1E7F0;--p-accent:#123E8F;--p-good:#1D7A56;--p-bad:#A8442F;
+    position:relative;width:100%;height:100%;border-radius:36px;overflow:hidden;
+    background:var(--p-bg);color:var(--p-ink);
+    font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Pretendard','Noto Sans KR','Segoe UI',sans-serif;
+    font-size:14px;line-height:1.4;display:flex;flex-direction:column;
+  }
+  .phone-hint{font-family:'Space Mono',monospace;font-size:0.7rem;color:var(--ink-soft);margin:0;text-align:center;max-width:300px;}
+
+  /* screen pieces */
+  .ps-status{display:flex;justify-content:space-between;align-items:center;padding:16px 26px 0;height:48px;font-size:13px;font-weight:600;flex:none;}
+  .ps-status .sig{letter-spacing:1px;font-size:11px;}
+  .ps-body{flex:1;overflow-y:auto;padding:8px 16px 20px;display:flex;flex-direction:column;gap:12px;}
+  .ps-appbar{display:flex;align-items:center;gap:10px;padding:6px 16px 10px;border-bottom:1px solid var(--p-line);flex:none;}
+  .ps-appbar .logo{width:28px;height:28px;border-radius:8px;background:var(--p-accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;}
+  .ps-appbar .ttl{font-weight:700;font-size:15px;}
+  .ps-appbar .back{font-size:20px;color:var(--p-soft);line-height:1;}
+  .ps-card{background:var(--p-surface);border-radius:14px;padding:14px;}
+  .ps-card.accent{background:var(--p-accent);color:#fff;}
+  .ps-small{font-size:12px;color:var(--p-soft);}
+  .ps-card.accent .ps-small{color:rgba(255,255,255,0.75);}
+  .ps-big{font-size:24px;font-weight:800;letter-spacing:-0.02em;}
+  .ps-h{font-size:18px;font-weight:800;margin:4px 0 0;letter-spacing:-0.01em;}
+  .ps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center;font-size:11px;color:var(--p-soft);}
+  .ps-grid .ic{width:40px;height:40px;margin:0 auto 4px;border-radius:12px;background:var(--p-surface);display:flex;align-items:center;justify-content:center;font-size:17px;}
+  .yr-tag{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:700;letter-spacing:0.04em;color:var(--p-good);background:color-mix(in srgb, var(--p-good) 14%, transparent);padding:3px 7px;border-radius:10px;}
+  .yr-tile{all:unset;box-sizing:border-box;cursor:pointer;display:flex;align-items:center;gap:12px;border:1.5px solid var(--p-accent);border-radius:14px;padding:12px 14px;background:color-mix(in srgb, var(--p-accent) 6%, var(--p-bg));}
+  .yr-tile .ic{width:36px;height:36px;border-radius:50%;background:var(--p-accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;flex:none;}
+  .yr-tile b{display:block;font-size:14px;color:var(--p-ink);}
+  .yr-tile span{font-size:12px;color:var(--p-soft);}
+  .opt{all:unset;box-sizing:border-box;cursor:pointer;display:flex;justify-content:space-between;align-items:center;width:100%;padding:13px 14px;border:1px solid var(--p-line);border-radius:12px;font-size:14px;}
+  .opt .ps-small{display:block;margin-top:2px;}
+  .opt.sel{border-color:var(--p-accent);background:color-mix(in srgb, var(--p-accent) 8%, var(--p-bg));font-weight:700;}
+  .opt::after{content:"›";color:var(--p-soft);font-size:18px;}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;}
+  .pchip{all:unset;box-sizing:border-box;cursor:pointer;padding:8px 11px;border:1px solid var(--p-line);border-radius:18px;font-size:12.5px;}
+  .pchip.sel{border-color:var(--p-accent);background:var(--p-accent);color:#fff;font-weight:700;}
+  .pbtn{all:unset;box-sizing:border-box;cursor:pointer;display:block;width:100%;text-align:center;padding:14px;border-radius:14px;font-weight:700;font-size:15px;background:var(--p-accent);color:#fff;}
+  .pbtn.ghost{background:var(--p-surface);color:var(--p-ink);}
+  .pbtn.danger{background:var(--p-bad);}
+  .ps-foot{padding:10px 16px 22px;display:flex;flex-direction:column;gap:8px;flex:none;}
+  .kv{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;font-size:13px;}
+  .kv dt{color:var(--p-soft);}
+  .kv dd{margin:0;font-weight:600;text-align:right;}
+  .notice{font-size:12px;color:var(--p-soft);background:var(--p-surface);border-radius:10px;padding:10px 12px;}
+  .notice b{color:var(--p-ink);}
+  .tap{animation:tapPulse 1.8s ease-in-out infinite;}
+  @keyframes tapPulse{0%,100%{box-shadow:0 0 0 0 color-mix(in srgb, var(--p-accent) 45%, transparent);}50%{box-shadow:0 0 0 6px color-mix(in srgb, var(--p-accent) 0%, transparent);}}
+  @media (prefers-reduced-motion: reduce){ .tap{animation:none;} }
+
+  /* lock screen + notification */
+  .lock{background:linear-gradient(160deg,#1B3A78 0%,#0A1730 70%);color:#fff;}
+  .lock .ps-status{color:#fff;}
+  .lock-time{text-align:center;font-size:64px;font-weight:300;letter-spacing:-0.03em;margin-top:18px;line-height:1;}
+  .lock-date{text-align:center;font-size:14px;opacity:0.8;margin-top:6px;}
+  .notif{all:unset;box-sizing:border-box;cursor:pointer;display:block;margin:28px 12px 0;background:rgba(255,255,255,0.92);color:#0A1730;border-radius:18px;padding:12px 14px;}
+  .notif .nh{display:flex;justify-content:space-between;font-size:11px;color:#5A6880;margin-bottom:4px;}
+  .notif b{font-size:14px;}
+  .notif p{margin:2px 0 0;font-size:13px;}
+
+  /* call screen */
+  .call{background:linear-gradient(180deg,#0E2350 0%,#05090F 100%);color:#fff;}
+  .call.warn{background:linear-gradient(180deg,#4A1C14 0%,#120806 100%);}
+  .call .ps-status{color:#fff;}
+  .call-top{text-align:center;padding:26px 20px 0;}
+  .call-badge{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;letter-spacing:0.04em;padding:5px 10px;border-radius:14px;background:rgba(63,165,122,0.22);color:#7FE0B5;}
+  .call.warn .call-badge{background:rgba(232,120,90,0.2);color:#FFB49F;}
+  .call-name{font-size:30px;font-weight:700;margin-top:14px;letter-spacing:-0.01em;}
+  .call-sub{font-size:13px;opacity:0.7;margin-top:2px;}
+  .call-card{margin:22px 16px 0;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:14px 16px;}
+  .call-card .kv dt{color:rgba(255,255,255,0.6);}
+  .call-card p{margin:0;font-size:13px;color:rgba(255,255,255,0.85);}
+  .call-actions{margin-top:auto;display:flex;justify-content:space-around;padding:0 30px 40px;}
+  .cbtn{all:unset;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:8px;font-size:12px;}
+  .cbtn .c{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;}
+  .cbtn.dec .c{background:#E0453A;}
+  .cbtn.acc .c{background:#34C759;}
+  .cbtn.acc .c.tap{animation:callPulse 1.6s ease-in-out infinite;}
+  @keyframes callPulse{0%,100%{box-shadow:0 0 0 0 rgba(52,199,89,0.6);}50%{box-shadow:0 0 0 12px rgba(52,199,89,0);}}
+  .in-call-time{font-size:15px;opacity:0.8;margin-top:6px;font-variant-numeric:tabular-nums;}
+
+  /* ledger */
+  .ledger-row{display:flex;gap:10px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--p-line);}
+  .ledger-row:last-child{border-bottom:none;}
+  .ledger-row .org{width:32px;height:32px;border-radius:9px;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;flex:none;}
+  .ledger-row .txt{flex:1;min-width:0;}
+  .ledger-row .txt b{display:block;font-size:13.5px;}
+  .ledger-row.off .txt b{color:var(--p-soft);text-decoration:line-through;}
+  .tog{all:unset;cursor:pointer;width:42px;height:24px;border-radius:12px;background:#C9D1DD;position:relative;flex:none;margin-top:4px;transition:background .15s;}
+  .tog::after{content:"";position:absolute;top:2px;left:2px;width:20px;height:20px;border-radius:50%;background:#fff;transition:left .15s;box-shadow:0 1px 2px rgba(0,0,0,0.25);}
+  .tog[aria-checked="true"]{background:var(--p-good);}
+  .tog[aria-checked="true"]::after{left:20px;}
+  .tog:focus-visible{outline:2px solid var(--p-accent);outline-offset:2px;}
+  .ps-section{font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--p-soft);margin:6px 0 -4px;}
+
+  @media (max-width:920px){
+    .demo-stage{grid-template-columns:1fr;}
+    .phone-wrap{position:static;order:-1;}
+  }
+  @media (max-width:380px){
+    .phone{width:290px;height:600px;}
+  }
+
   @media (max-width:920px){
     .hero-bleed,.split-bleed{grid-template-columns:1fr;}
     .hero-text-col{padding-right:clamp(20px,5vw,64px);}
@@ -295,22 +519,32 @@
   }
 </style>
 
-<div class="topwrap wrap">
-  <div class="topbar">
-    <div class="mark">연락 <b>YEONRAK</b></div>
-    <div>opt-in call exchange</div>
+<header class="site-header">
+  <div class="class-banner" role="note">
+    <div class="wrap"><span class="cb-long">Ongoing class project · Yonsei GSIS, <b>Innovation and Corporate Transformation</b> with Prof. Chung Yunho · Fall 2026, Team 2</span><span class="cb-short">Class project · Yonsei GSIS · <b>Prof. Chung Yunho</b> · Team 2</span></div>
   </div>
-</div>
+  <div class="navbar">
+    <div class="wrap navbar-inner">
+      <a class="mark" href="#top">연락 <b>YEONRAK</b></a>
+      <nav class="view-tabs" aria-label="Pages">
+        <a href="#top" class="view-tab" data-view="home"><span class="vt-n">01</span>Overview</a>
+        <a href="#strategy" class="view-tab" data-view="strategy"><span class="vt-n">02</span>Strategy</a>
+        <a href="#demo" class="view-tab" data-view="demo"><span class="vt-n">03</span>Phone demo</a>
+      </nav>
+    </div>
+  </div>
+</header>
 
+<main id="homeView">
 <!-- HERO -->
 <section class="hero-bleed" id="top">
   <div class="hero-text-col">
     <p class="eyebrow">Winning Aspiration</p>
     <h1>No more ignored calls.<br>No more ignored people.</h1>
-    <p class="lede">Yeonrak is the opt-in call exchange: verify your identity once, tell us when and why — and only ever take the calls you actually asked for, on either end of the line.</p>
+    <p class="lede">Yeonrak is the opt-in call exchange: verify once, say when and why, and only ever take the calls you asked for. It lives inside the apps you already use. There is nothing new to download.</p>
     <div class="cta-row">
-      <a class="btn primary" href="#try">I want to be called →</a>
-      <a class="btn ghost" href="#services">I want to reach customers →</a>
+      <a class="btn primary" href="#demo">See it on a phone →</a>
+      <a class="btn ghost" href="#how">How it works →</a>
     </div>
     <p class="ring-caption">She asked to be called — so this time, she isn't afraid to look.</p>
   </div>
@@ -353,7 +587,7 @@
   <div class="wrap">
     <p class="eyebrow">Objective</p>
     <blockquote class="manifesto">A call should only happen when both people actually want it to.</blockquote>
-    <p class="prose" style="margin-top:1.4em;">Yeonrak replaces the guessing game — cold outbound on one side, blind hold queues on the other — with a single opt-in exchange. Identity verified once. Availability stated up front. The phone only rings when someone asked it to.</p>
+    <p class="prose" style="margin-top:1.4em;">Yeonrak replaces the guessing game — cold outbound on one side, blind hold queues on the other — with a single opt-in exchange. Identity verified once. Purpose and time agreed up front. The phone only rings when someone asked it to.</p>
   </div>
 </section>
 
@@ -375,31 +609,28 @@
     <h2>One verified profile. Two ways in.</h2>
     <div class="how-grid">
       <div class="steps">
-        <div class="step"><span class="n num">01</span><div><h4>Verify once</h4><p>Link identity through your bank's or telecom's existing check — PASS-style — shared with every partner on Yeonrak, so no one re-verifies you call after call.</p></div></div>
-        <div class="step"><span class="n num">02</span><div><h4>Request or list</h4><p>As a customer, log what you need and when you're free. As a business, list what you offer instead of dialing cold.</p></div></div>
-        <div class="step"><span class="n num">03</span><div><h4>Matched call</h4><p>Yeonrak connects the two only when a customer has actually asked — at a time they chose, not a queue they're stuck in.</p></div></div>
+        <div class="step"><span class="n num">01</span><div><h4>Verify once</h4><p>Identity comes from the PASS check people already use. Every institution on Yeonrak recognizes it, so no one re-verifies you call after call.</p></div></div>
+        <div class="step"><span class="n num">02</span><div><h4>Agree per purpose</h4><p>Either you request a call and pick the window, or the institution asks permission and states why. Consent is given per purpose, not per institution: agreeing to a fraud alert is not agreeing to a sales call.</p></div></div>
+        <div class="step"><span class="n num">03</span><div><h4>The verified call arrives</h4><p>The call screen shows who is calling, why, and when you agreed. A call with no consent on record is flagged.</p></div></div>
       </div>
       <div class="diagram">
-        <svg viewBox="0 0 460 260" role="img" aria-label="Diagram: verified ID and callback request feed into Yeonrak's exchange, which routes to a matched business listing and scheduled call.">
-          <line x1="118" y1="68" x2="210" y2="118"></line>
-          <line x1="118" y1="192" x2="210" y2="140"></line>
-          <line x1="250" y1="120" x2="342" y2="68"></line>
-          <line x1="250" y1="140" x2="342" y2="192"></line>
+        <svg viewBox="0 0 460 260" role="img" aria-label="Diagram: a person's request and an institution's permission request both pass through Yeonrak's per-purpose consent record before a verified call arrives.">
+          <line x1="168" y1="68" x2="200" y2="112"></line>
+          <line x1="168" y1="192" x2="200" y2="148"></line>
+          <line x1="270" y1="130" x2="292" y2="130"></line>
           <rect class="node-fill" x="18" y="46" width="150" height="44" rx="3"></rect>
-          <text x="93" y="63" text-anchor="middle" font-size="11" font-weight="700">Verified ID</text>
-          <text class="sub" x="93" y="78" text-anchor="middle" font-size="9">PASS-style, one time</text>
+          <text x="93" y="63" text-anchor="middle" font-size="11" font-weight="700">Row A · You ask</text>
+          <text class="sub" x="93" y="78" text-anchor="middle" font-size="9">purpose + your window</text>
           <rect class="node-fill" x="18" y="170" width="150" height="44" rx="3"></rect>
-          <text x="93" y="187" text-anchor="middle" font-size="11" font-weight="700">Callback request</text>
-          <text class="sub" x="93" y="202" text-anchor="middle" font-size="9">topic + free window</text>
-          <circle class="hub-fill" cx="230" cy="130" r="40"></circle>
-          <text class="hub-text" x="230" y="126" text-anchor="middle" font-size="11" font-weight="700">YEONRAK</text>
-          <text class="hub-text" x="230" y="140" text-anchor="middle" font-size="8">exchange</text>
-          <rect class="node-fill" x="292" y="46" width="150" height="44" rx="3"></rect>
-          <text x="367" y="63" text-anchor="middle" font-size="11" font-weight="700">Business listing</text>
-          <text class="sub" x="367" y="78" text-anchor="middle" font-size="9">product or service</text>
-          <rect class="node-fill" x="292" y="170" width="150" height="44" rx="3"></rect>
-          <text x="367" y="187" text-anchor="middle" font-size="11" font-weight="700">Scheduled call</text>
-          <text class="sub" x="367" y="202" text-anchor="middle" font-size="9">both sides opted in</text>
+          <text x="93" y="187" text-anchor="middle" font-size="11" font-weight="700">Row B · They ask</text>
+          <text class="sub" x="93" y="202" text-anchor="middle" font-size="9">stated purpose, you accept</text>
+          <circle class="hub-fill" cx="230" cy="130" r="42"></circle>
+          <text class="hub-text" x="230" y="124" text-anchor="middle" font-size="11" font-weight="700">YEONRAK</text>
+          <text class="hub-text" x="230" y="138" text-anchor="middle" font-size="8">consent record</text>
+          <text class="hub-text" x="230" y="149" text-anchor="middle" font-size="8">per purpose</text>
+          <rect class="node-fill" x="292" y="108" width="150" height="44" rx="3"></rect>
+          <text x="367" y="125" text-anchor="middle" font-size="11" font-weight="700">Verified call</text>
+          <text class="sub" x="367" y="140" text-anchor="middle" font-size="9">who · why · when agreed</text>
         </svg>
       </div>
     </div>
@@ -411,7 +642,7 @@
   <div class="wrap">
     <p class="eyebrow">See it in action</p>
     <h2>Pick who should call you back</h2>
-    <p class="prose try-intro">This is the same request flow a customer uses on Yeonrak. Choose an organization, leave your window, and see what they'd get — not a robocall, a scheduled one.</p>
+    <p class="prose try-intro">This is the same request flow a customer uses on Yeonrak. Choose an organization, leave your window, and see what they'd get — not a robocall, a scheduled one. To see it as it would appear on a phone, open the <a href="#demo">phone demo</a>.</p>
 
     <div class="try-shell" id="tryShell">
       <div>
@@ -467,10 +698,10 @@
     <p class="eyebrow">What's on the panel</p>
     <h2>Four things on every line</h2>
     <div class="plates">
-      <div class="plate"><span class="jack"></span><span class="tag">PLATE 01</span><h3>Verified ID Pass</h3><p>One identity check, recognized by every partner bank and business — no re-verifying on every single call.</p></div>
-      <div class="plate"><span class="jack"></span><span class="tag">PLATE 02</span><h3>Scheduled Callback</h3><p>Log your request and your window. We call you — never the other way around, never on hold.</p></div>
-      <div class="plate"><span class="jack"></span><span class="tag">PLATE 03</span><h3>Opt-in Marketplace</h3><p>Businesses list instead of dialing cold. Customers browse and request contact entirely on their own terms.</p></div>
-      <div class="plate"><span class="jack"></span><span class="tag">PLATE 04</span><h3>Priority Line</h3><p>Pay to move up the queue — for the days minutes matter more than money.</p></div>
+      <div class="plate"><span class="jack"></span><span class="tag">PLATE 01</span><h3>Verified ID</h3><p>One PASS-based identity check, recognized by every partner institution, so no one re-verifies you on every call.</p></div>
+      <div class="plate"><span class="jack"></span><span class="tag">PLATE 02</span><h3>Purpose Consent</h3><p>Every call is tied to one stated purpose. A new purpose means a new request, which you can decline.</p></div>
+      <div class="plate"><span class="jack"></span><span class="tag">PLATE 03</span><h3>Two-way Start</h3><p>Request a call and choose the time, or accept an institution's request. Either way, nothing rings until you agree.</p></div>
+      <div class="plate"><span class="jack"></span><span class="tag">PLATE 04</span><h3>Consent Record</h3><p>One place to see every call you agreed to, across every institution, and to withdraw any of them.</p></div>
     </div>
   </div>
 </section>
@@ -496,10 +727,10 @@
     <h2>Three lines on the statement</h2>
     <div class="statement">
       <div class="stm-head"><span>Item</span><span>For</span><span>Model</span></div>
-      <div class="stm-row"><span class="item">Match fee</span><span class="who">Businesses &amp; call centers</span><span class="how">Charged per successfully connected, opted-in call — not per attempt.</span></div>
-      <div class="stm-row"><span class="item">Priority tier</span><span class="who">Consumers</span><span class="how">Optional monthly subscription for faster callback matching.</span></div>
-      <div class="stm-row"><span class="item">Trend insights</span><span class="who">Businesses</span><span class="how">Anonymized, consent-based reports on inquiry patterns.</span></div>
-      <div class="stm-note">No fee for a basic request. No fee for a basic listing. We earn when a wanted call actually happens.</div>
+      <div class="stm-row"><span class="item">Per-call fee</span><span class="who">Institutions</span><span class="how">Charged per consented call that connects, not per attempt. The price scales with use, so smaller institutions pay less.</span></div>
+      <div class="stm-row"><span class="item">Priority call</span><span class="who">People (optional)</span><span class="how">₩3,000 for an agent to call within 1 minute, with no charge if the call doesn't connect in time. Fraud and security calls are always free.</span></div>
+      <div class="stm-row"><span class="item">Trend insights</span><span class="who">Institutions</span><span class="how">Anonymized, consent-based reports on why and when customers want to be called.</span></div>
+      <div class="stm-note">Basic calls are free for people and paid for by the institutions that must reach them. We earn when a wanted call actually happens.</div>
     </div>
   </div>
 </section>
@@ -523,14 +754,172 @@
     <p class="eyebrow">Yeonrak (연락) — "to get in touch"</p>
     <h2>No more ignored calls.<br>No more ignored people.</h2>
     <div class="cta-row">
-      <a class="btn primary" href="#top">Back to the top ↑</a>
+      <a class="btn primary" href="#demo">See the phone demo →</a>
+      <a class="btn ghost" href="#top">Back to the top ↑</a>
     </div>
   </div>
 </section>
+</main>
+
+<main id="strategyView" hidden>
+<section class="demo-section">
+  <div class="wrap">
+    <p class="eyebrow">Playing to Win · Strategy cascade</p>
+    <h2 class="demo-h2">Five choices, made one at a time</h2>
+    <p class="prose">Lafley's framework treats strategy as five connected choices. Each answer has to fit the one before it. We present them step by step through the semester; this page collects what we have decided so far.</p>
+
+    <nav class="cascade" aria-label="Strategy cascade">
+      <a class="cas done" href="#strategy-aspiration"><span class="cn">01</span><b>Winning Aspiration</b><span class="cs">Presented 21 Sep</span></a>
+      <a class="cas done" href="#strategy-where"><span class="cn">02</span><b>Where to Play</b><span class="cs">This step</span></a>
+      <a class="cas done" href="#strategy-how"><span class="cn">03</span><b>How to Win</b><span class="cs">This step</span></a>
+      <span class="cas next"><span class="cn">04</span><b>Capabilities</b><span class="cs">Coming next</span></span>
+      <span class="cas next"><span class="cn">05</span><b>Management Systems</b><span class="cs">Coming next</span></span>
+    </nav>
+  </div>
+</section>
+
+<!-- 01 WINNING ASPIRATION -->
+<section id="strategy-aspiration" class="tint">
+  <div class="wrap">
+    <p class="eyebrow">01 · Winning Aspiration</p>
+    <blockquote class="manifesto">Every call from an institution is real, and it comes when you asked for it.</blockquote>
+    <div class="ev-list">
+      <div class="ev-row"><span class="ev-label">WHY</span><p>Nobody should fear their own phone.</p></div>
+      <div class="ev-row"><span class="ev-label">HOW</span><p>Verify once, opt in, call by appointment.</p></div>
+      <div class="ev-row"><span class="ev-label">WHAT</span><p>A consent layer institutions build into their apps, and one place where people see every call they agreed to.</p></div>
+    </div>
+    <p class="closer-line">We play to win, not to compete: the standard lane for institutional calls in Korea, not one more blocking app.</p>
+  </div>
+</section>
+
+<!-- 02 WHERE TO PLAY -->
+<section id="strategy-where">
+  <div class="wrap">
+    <p class="eyebrow">02 · Where to Play</p>
+    <h2>Regulated institutions in Korea, starting with banks</h2>
+    <p class="prose">Where to Play is a set of choices about where we compete, and just as much about where we don't.</p>
+
+    <div class="statement wtp">
+      <div class="stm-head"><span>Dimension</span><span>We play</span><span>We don't play</span></div>
+      <div class="stm-row"><span class="item">Geography</span><span class="how">South Korea first. The problem, the PASS identity layer and the phishing losses are all Korean.</span><span class="how no">A global launch. Other markets come after Korea proves the model.</span></div>
+      <div class="stm-row"><span class="item">Customer (who pays)</span><span class="how">Regulated institutions that must reach people: banks first, then insurers and large hospitals.</span><span class="how no">Small shops, telemarketers, cold callers.</span></div>
+      <div class="stm-row"><span class="item">User</span><span class="how">The customers of those institutions. Basic use is free.</span><span class="how no">Charging people for protection.</span></div>
+      <div class="stm-row"><span class="item">Offering</span><span class="how">Consent-based service calls: fraud alerts, account issues, claims and renewals, medical results, appointments, callbacks.</span><span class="how no">Cold sales calls, spam blocking, caller ID on its own.</span></div>
+      <div class="stm-row"><span class="item">Channel</span><span class="how">Embedded in the institution's own app (an SDK), so people use the apps they already have.</span><span class="how no">A separate app or website people must download or visit.</span></div>
+      <div class="stm-row"><span class="item">Value-chain position</span><span class="how">The consent layer between institution and person. Identity comes from PASS and the carriers.</span><span class="how no">Telephony, call-centre software, our own identity system.</span></div>
+    </div>
+
+    <div class="wtp-grid">
+      <div class="rule-card">
+        <p class="eyebrow">How we choose customers</p>
+        <h3>A missed call is costly, and the call is expected or regulated</h3>
+        <p>Our customers are not chosen by size. We serve institutions where an unanswered call means real loss: money stolen, a claim delayed, a test result missed. That is where consent before the call is worth paying for.</p>
+      </div>
+      <div class="rule-card">
+        <p class="eyebrow">Why banks first</p>
+        <ul class="ticks">
+          <li>Voice phishing hits banks directly, and they are under pressure to warn customers.</li>
+          <li>High call volume: fraud alerts, loans, account issues.</li>
+          <li>Their apps already verify identity, so embedding Yeonrak is a small step.</li>
+        </ul>
+      </div>
+      <div class="rule-card">
+        <p class="eyebrow">"What about small businesses?"</p>
+        <p>Every business picks its customers, and we are not trying to reach every company. Small businesses are not our first market. Because institutions pay per connected call, the price scales with use, and smaller players can join later through carriers or partners.</p>
+      </div>
+    </div>
+
+    <div class="phases">
+      <div class="phase"><span class="pn num">PHASE 1</span><b>Banks</b><span>Fraud alerts, loans, account issues</span></div>
+      <div class="phase"><span class="pn num">PHASE 2</span><b>Insurers &amp; large hospitals</b><span>Claims, renewals, results, appointments</span></div>
+      <div class="phase"><span class="pn num">PHASE 3</span><b>Public institutions</b><span>Slower procurement, same need</span></div>
+      <div class="phase"><span class="pn num">LATER</span><b>Beyond Korea</b><span>Markets with the same trust problem</span></div>
+    </div>
+
+    <p class="closer-line">On sales calls: no call rings without consent for that purpose. An institution may <em>ask</em> to call about something new, such as an offer, and the person can decline. Consent is per purpose, not per institution. (Shown in the <a href="#demo">phone demo</a>, scenario 3.)</p>
+  </div>
+</section>
+
+<!-- 03 HOW TO WIN -->
+<section id="strategy-how" class="tint-surface">
+  <div class="wrap">
+    <p class="eyebrow">03 · How to Win</p>
+    <h2>We win by differentiation: consent, not identification</h2>
+    <blockquote class="manifesto htw-statement">In Korea's regulated institutions, we win by being the only neutral consent record across all of them: institutions get calls that are answered, and people get only calls they agreed to.</blockquote>
+
+    <div class="qa-compare">
+      <div class="qa"><span class="chip bad">Competitors answer</span><p class="q">Who is calling me?</p></div>
+      <div class="qa"><span class="chip good">Yeonrak answers</span><p class="q">Did I agree to this call? Why are they calling? When did I agree?</p></div>
+    </div>
+
+    <h3 class="sub-h">Why we beat each competitor</h3>
+    <div class="statement">
+      <div class="stm-head"><span>Competitor</span><span>What they do well</span><span>Why we win</span></div>
+      <div class="stm-row"><span class="item">Whoscall, 후후</span><span class="how">Installed on millions of phones; identify and block spam.</span><span class="how">They need a separate app and only label numbers. We sit inside apps people already use and show the purpose of the call.</span></div>
+      <div class="stm-row"><span class="item">Carriers &amp; PASS</span><span class="how">Own verified identity for the whole country; block calls on the network.</span><span class="how">PASS proves who you are. Yeonrak proves what you agreed to, for what purpose, and when. We build on them as partners rather than compete.</span></div>
+      <div class="stm-row"><span class="item">A bank's own callback button</span><span class="how">Already built, already trusted, no third party.</span><span class="how">It only works inside one bank, so the phone still rings from everyone else. We are one consent record across every institution.</span></div>
+      <div class="stm-row"><span class="item">The ignored call</span><span class="how">Free, instant, needs no app.</span><span class="how">Ignoring calls also blocks the fraud alert and the hospital result. We make the calls that matter safe to answer.</span></div>
+    </div>
+
+    <h3 class="sub-h">The choices that make us different</h3>
+    <div class="plates five">
+      <div class="plate"><span class="jack"></span><span class="tag">CHOICE 01</span><h3>Per-purpose consent</h3><p>Every call is tied to one stated purpose. Agreeing to a fraud alert is not agreeing to a sales call.</p></div>
+      <div class="plate"><span class="jack"></span><span class="tag">CHOICE 02</span><h3>Two-way start</h3><p>The person can request a call and pick the time, or the institution can ask permission. Nothing rings until the person agrees.</p></div>
+      <div class="plate"><span class="jack"></span><span class="tag">CHOICE 03</span><h3>Nothing to download</h3><p>Embedded in the apps people already use, so we don't ask anyone to change their behaviour.</p></div>
+      <div class="plate"><span class="jack"></span><span class="tag">CHOICE 04</span><h3>Value on both ends</h3><p>People answer with confidence; institutions reach the people they need to reach, and call-centre staff get conversations instead of rejection.</p></div>
+      <div class="plate plate-key"><span class="jack"></span><span class="tag">CHOICE 05 · HARDEST TO COPY</span><h3>One record across institutions</h3><p>Every consent, from every bank, insurer and hospital, in one place. Each new institution makes the record more useful for people and for every other institution.</p></div>
+    </div>
+
+    <div class="fit-box">
+      <p class="eyebrow">Why the choices fit together</p>
+      <p>Where to Play and How to Win reinforce each other. Regulated, high-stakes calls are exactly where per-purpose consent is worth paying for, and embedding works because those institutions already have apps with verified identity.</p>
+      <div class="cta-row"><a class="btn primary" href="#demo">See it in the phone demo →</a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<main id="demoView" hidden>
+<section class="demo-section">
+  <div class="wrap">
+    <p class="eyebrow">Phone demo</p>
+    <h2 class="demo-h2">What Yeonrak looks like on a phone</h2>
+    <p class="prose">Yeonrak isn't an app people download. These screens show it inside an institution's own app and on the call screen. 소라은행 (Sora Bank) and the other institutions are fictional.</p>
+
+    <div class="scn-tabs" role="tablist" aria-label="Demo scenarios" id="scnTabs"></div>
+
+    <div class="demo-stage">
+      <div class="demo-side">
+        <p class="scn-row" id="scnRow"></p>
+        <h3 class="scn-title" id="scnTitle"></h3>
+        <p class="scn-summary" id="scnSummary"></p>
+        <ol class="step-list" id="stepList"></ol>
+        <div class="step-note" aria-live="polite">
+          <p class="step-note-label">On screen</p>
+          <p id="stepNote"></p>
+          <p class="step-note-label why">Why it matters</p>
+          <p id="stepWhy"></p>
+        </div>
+        <div class="demo-controls">
+          <button type="button" class="btn ghost" id="stepBack">← Back</button>
+          <button type="button" class="btn primary" id="stepNext">Next →</button>
+        </div>
+      </div>
+      <div class="phone-wrap">
+        <div class="phone" aria-label="Phone screen preview">
+          <div class="phone-island" aria-hidden="true"></div>
+          <div class="phone-screen" id="phoneScreen"></div>
+        </div>
+        <p class="phone-hint">Tap the highlighted buttons inside the phone, or use Next.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
 
 <footer class="wrap">
-  <span>Prepared for Innovation &amp; Corporate Transformation — Winning Aspiration pitch.</span>
-  <span>Play to Win cascade continues next week.</span>
+  <span>Prepared for Innovation &amp; Corporate Transformation, Team 2 — Playing to Win.</span>
+  <span>Winning Aspiration → Where to Play → How to Win</span>
 </footer>
 
 <script>
@@ -607,5 +996,317 @@
     confirmPanel.hidden = true;
     shell.hidden = false;
   });
+})();
+</script>
+
+<script>
+/* ---------- view tabs (Overview / Phone demo) ---------- */
+(function(){
+  var home = document.getElementById('homeView');
+  var demo = document.getElementById('demoView');
+  var strategy = document.getElementById('strategyView');
+  var tabs = document.querySelectorAll('.view-tab');
+  var current = null;
+
+  function show(){
+    var h = location.hash;
+    var view = h === '#demo' ? 'demo' : (h.indexOf('#strategy') === 0 ? 'strategy' : 'home');
+    home.hidden = view !== 'home';
+    demo.hidden = view !== 'demo';
+    strategy.hidden = view !== 'strategy';
+    tabs.forEach(function(t){
+      var on = t.getAttribute('data-view') === view;
+      t.classList.toggle('is-active', on);
+      if(on){ t.setAttribute('aria-current','page'); } else { t.removeAttribute('aria-current'); }
+    });
+    var target = h.length > 1 && h !== '#strategy' && h !== '#demo' ? document.getElementById(h.slice(1)) : null;
+    if(target){ target.scrollIntoView(); }
+    else if(view !== current || h === '#top' || !h){ window.scrollTo(0,0); }
+    current = view;
+  }
+  window.addEventListener('hashchange', show);
+  show();
+})();
+
+/* ---------- phone demo ---------- */
+(function(){
+  var BANK = '소라은행', BANK_EN = 'Sora Bank';
+  var state = { purpose:'Loan renewal', day:'Tue 13 Oct', slot:'14:00–15:00', priority:'' };
+  var ledger = [
+    { org:'소', color:'#123E8F', name:BANK, purpose:'Fraud & security alerts', when:'Any time · agreed 2 Mar 2026', on:true },
+    { org:'소', color:'#123E8F', name:BANK, purpose:'Loan renewal', when:'Tue 13 Oct, 14:00–15:00 · one call', on:true },
+    { org:'한', color:'#1D7A56', name:'한결손해보험', purpose:'Claim follow-up', when:'Weekdays 18:00–20:00 · until claim closes', on:true },
+    { org:'새', color:'#8B3F2E', name:'새봄병원', purpose:'Test results', when:'Fri 16 Oct, 10:00–11:00 · one call', on:true },
+    { org:'소', color:'#123E8F', name:BANK, purpose:'Savings product offers', when:'Declined 7 Oct 2026', on:false }
+  ];
+
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function status(time){ return '<div class="ps-status"><span>' + time + '</span><span class="sig">▂▄▆ 5G ▮</span></div>'; }
+  function appbar(title, back){
+    return '<div class="ps-appbar">' + (back ? '<span class="back">‹</span>' : '<span class="logo">소</span>') +
+      '<span class="ttl">' + title + '</span></div>';
+  }
+  function slotStart(){ return state.priority ? '09:42' : state.slot.split('–')[0].replace(':00', ':02'); }
+  function askedFor(){ return state.priority ? 'Now · Priority' : state.day.split(' ')[0] + ' ' + state.slot; }
+
+  /* screen builders */
+  function bankHome(time, highlight){
+    return status(time) + appbar(BANK) +
+      '<div class="ps-body">' +
+        '<div class="ps-card accent"><div class="ps-small">입출금 통장 · 110-***-4821</div><div class="ps-big">₩2,418,560</div></div>' +
+        '<div class="ps-grid"><div><div class="ic">↗</div>이체</div><div><div class="ic">▤</div>조회</div><div><div class="ic">◈</div>카드</div><div><div class="ic">％</div>대출</div></div>' +
+        '<button type="button" class="yr-tile' + (highlight ? ' tap' : '') + '" data-next><span class="ic">✆</span><span><b>Request a call</b><span>Pick why and when. We call you then.</span></span></button>' +
+        '<div class="notice">Powered by <b>Yeonrak</b> · verified calls only</div>' +
+      '</div>';
+  }
+
+  function pickPurpose(){
+    var opts = [['Loan renewal','Mortgage & credit loans'],['Card problem','Lost, blocked or disputed'],['Account access','Locked out, password'],['Something else','Tell the agent in one line']];
+    return status('09:41') + appbar('Request a call', true) +
+      '<div class="ps-body"><p class="ps-h">What is the call about?</p><p class="ps-small" style="margin:0">The agent will see this before calling. It is the only thing you agree to.</p>' +
+      opts.map(function(o){
+        return '<button type="button" class="opt' + (state.purpose === o[0] ? ' sel tap' : '') + '" data-set="purpose" data-val="' + esc(o[0]) + '" data-next><span>' + o[0] + '<span class="ps-small">' + o[1] + '</span></span></button>';
+      }).join('') + '</div>';
+  }
+
+  function pickWindow(){
+    var days = ['Thu 8 Oct','Fri 9 Oct','Mon 12 Oct','Tue 13 Oct'];
+    var slots = ['10:00–11:00','12:00–13:00','14:00–15:00','18:00–19:00'];
+    var pri = !!state.priority;
+    return status('09:41') + appbar('Request a call', true) +
+      '<div class="ps-body"><p class="ps-h">When should they call?</p>' +
+      '<button type="button" class="opt' + (pri ? ' sel' : '') + '" data-set="priority" data-val="now"><span>Call me now · <b>₩3,000</b><span class="ps-small">Priority · an agent calls within 1 minute</span></span></button>' +
+      '<div class="ps-section">Or pick a free time</div><div class="chips">' +
+      days.map(function(d){ return '<button type="button" class="pchip' + (!pri && state.day === d ? ' sel' : '') + '" data-set="day" data-val="' + d + '">' + d + '</button>'; }).join('') +
+      '</div><div class="chips">' +
+      slots.map(function(s){ return '<button type="button" class="pchip' + (!pri && state.slot === s ? ' sel' : '') + '" data-set="slot" data-val="' + s + '">' + s + '</button>'; }).join('') +
+      '</div><div class="notice">' + (pri ? '<b>No call within 1 minute, no charge.</b> Fraud and security calls are always free.' : 'Free. Outside this window, ' + BANK + ' cannot call you about this.') + '</div></div>' +
+      '<div class="ps-foot"><button type="button" class="pbtn tap" data-next>Continue</button></div>';
+  }
+
+  function reviewConsent(){
+    var pri = !!state.priority;
+    var when = pri ? '<dt>When</dt><dd>Now, within 1 min</dd><dt>Price</dt><dd>₩3,000</dd><dt>Pay from</dt><dd>•••• 4821</dd>'
+                   : '<dt>Day</dt><dd>' + state.day + '</dd><dt>Window</dt><dd>' + state.slot + '</dd>';
+    return status('09:41') + appbar(pri ? 'Priority call' : 'Review', true) +
+      '<div class="ps-body"><p class="ps-h">You are agreeing to one call</p>' +
+      '<div class="ps-card"><dl class="kv"><dt>From</dt><dd>' + BANK + '</dd><dt>Purpose</dt><dd>' + esc(state.purpose) + '</dd>' + when + '<dt>Calls</dt><dd>1</dd></dl></div>' +
+      (pri ? '<div class="notice"><b>No call within 1 minute, no charge.</b> You pay only if the call connects in time.</div>'
+           : '<div class="notice"><b>Nothing else.</b> This does not allow sales calls or any other purpose.</div>') +
+      '<div class="notice">Identity checked with PASS, the same check you already use. No re-verification on the call.</div></div>' +
+      '<div class="ps-foot"><button type="button" class="pbtn tap" data-next>' + (pri ? 'Pay ₩3,000 with PASS' : 'Confirm with PASS') + '</button></div>';
+  }
+
+  function booked(){
+    if(state.priority){
+      return status('09:42') + appbar('Priority call', true) +
+        '<div class="ps-body" style="text-align:center;justify-content:center;">' +
+          '<div style="font-size:44px;color:var(--p-good)">✓</div><p class="ps-h">Paid · calling you now</p>' +
+          '<p class="ps-small" style="margin:0">An agent from ' + BANK + ' will call you within 1 minute about <b>' + esc(state.purpose) + '</b>.</p>' +
+          '<div class="ps-card" style="text-align:left"><span class="yr-tag">✓ YEONRAK</span><p class="ps-small" style="margin:8px 0 0">₩3,000 is charged only if the call connects in time.</p></div>' +
+        '</div><div class="ps-foot"><button type="button" class="pbtn tap" data-next>Wait for the call →</button></div>';
+    }
+    return status('09:42') + appbar('Request a call', true) +
+      '<div class="ps-body" style="text-align:center;justify-content:center;">' +
+        '<div style="font-size:44px;color:var(--p-good)">✓</div><p class="ps-h">Call booked</p>' +
+        '<p class="ps-small" style="margin:0">' + BANK + ' will call you on ' + state.day + ', ' + state.slot + ' about <b>' + esc(state.purpose) + '</b>.</p>' +
+        '<div class="ps-card" style="text-align:left"><span class="yr-tag">✓ YEONRAK</span><p class="ps-small" style="margin:8px 0 0">The call screen will show this purpose and when you agreed, so you know it is real.</p></div>' +
+      '</div><div class="ps-foot"><button type="button" class="pbtn tap" data-next>Skip to ' + state.day.split(' ')[0] + ' ' + slotStart() + ' →</button></div>';
+  }
+
+
+  function incoming(opts){
+    return '<div class="call" style="height:100%;display:flex;flex-direction:column">' + status(opts.time) +
+      '<div class="call-top"><span class="call-badge">✓ Verified by Yeonrak</span><div class="call-name">' + BANK + '</div><div class="call-sub">' + BANK_EN + ' · 1588-0000</div></div>' +
+      '<div class="call-card"><dl class="kv"><dt>Purpose</dt><dd>' + esc(opts.purpose) + '</dd><dt>' + opts.askedLabel + '</dt><dd>' + opts.asked + '</dd><dt>Agreed</dt><dd>' + opts.agreed + '</dd></dl></div>' +
+      '<div class="call-actions"><button type="button" class="cbtn dec"><span class="c">✕</span>Decline</button><button type="button" class="cbtn acc" data-next><span class="c tap">✆</span>Accept</button></div></div>';
+  }
+
+  function inCall(opts){
+    return '<div class="call" style="height:100%;display:flex;flex-direction:column">' + status(opts.time) +
+      '<div class="call-top"><span class="call-badge">✓ Verified by Yeonrak</span><div class="call-name">' + BANK + '</div><div class="in-call-time">00:14</div></div>' +
+      '<div class="call-card"><p>' + opts.text + '</p></div>' +
+      '<div class="call-actions"><button type="button" class="cbtn dec" data-next><span class="c">✕</span>End</button></div></div>';
+  }
+
+  function lockNotif(time, title, body){
+    return '<div class="lock" style="height:100%;display:flex;flex-direction:column">' + status(time) +
+      '<div class="lock-time">' + time + '</div><div class="lock-date">Wednesday 7 October</div>' +
+      '<button type="button" class="notif tap" data-next><div class="nh"><span>' + BANK + ' · Yeonrak</span><span>now</span></div><b>' + title + '</b><p>' + body + '</p></button></div>';
+  }
+
+  function permissionSheet(o){
+    return status(o.time) + appbar('Call request', true) +
+      '<div class="ps-body"><span class="yr-tag" style="align-self:flex-start">' + o.tag + '</span><p class="ps-h">' + o.title + '</p>' +
+      '<div class="ps-card"><dl class="kv"><dt>From</dt><dd>' + BANK + '</dd><dt>Purpose</dt><dd>' + o.purpose + '</dd>' + o.extra + '</dl></div>' +
+      '<div class="notice">' + o.notice + '</div></div>' +
+      '<div class="ps-foot">' + o.buttons + '</div>';
+  }
+
+  function result(time, icon, color, title, body, btn){
+    return status(time) + appbar(BANK, false) +
+      '<div class="ps-body" style="text-align:center;justify-content:center;">' +
+        '<div style="font-size:44px;color:' + color + '">' + icon + '</div><p class="ps-h">' + title + '</p>' +
+        '<p class="ps-small" style="margin:0">' + body + '</p></div>' +
+      (btn ? '<div class="ps-foot">' + btn + '</div>' : '');
+  }
+
+  function warnCall(){
+    return '<div class="call warn" style="height:100%;display:flex;flex-direction:column">' + status('16:27') +
+      '<div class="call-top"><span class="call-badge">⚠ No Yeonrak consent</span><div class="call-name">070-4812-3390</div><div class="call-sub">Unknown number</div></div>' +
+      '<div class="call-card"><p><b>This is not a Yeonrak call.</b> You have no call scheduled with any institution right now.</p><p style="margin-top:8px">If the caller says they are from your bank, a card company or the police, hang up and check in your bank app.</p></div>' +
+      '<div class="call-actions"><button type="button" class="cbtn dec" data-next><span class="c tap" style="animation:none;box-shadow:0 0 0 4px rgba(224,69,58,0.35)">✕</span>Decline</button><button type="button" class="cbtn acc"><span class="c">✆</span>Accept</button></div></div>';
+  }
+
+  function checkCalls(){
+    return status('16:28') + appbar('Scheduled calls', true) +
+      '<div class="ps-body"><p class="ps-h">Is ' + BANK + ' calling me?</p>' +
+      '<div class="ps-card"><dl class="kv"><dt>Right now</dt><dd style="color:var(--p-bad)">No call scheduled</dd><dt>Next booked call</dt><dd>Tue 13 Oct, 14:00</dd></dl></div>' +
+      '<div class="notice">' + BANK + ' only calls you for purposes you agreed to, and the call screen always shows the purpose. A call without that is not us.</div></div>' +
+      '<div class="ps-foot"><button type="button" class="pbtn danger tap" data-next>Report 070-4812-3390</button></div>';
+  }
+
+  function ledgerScreen(){
+    var active = ledger.filter(function(l){ return l.on; }).length;
+    return status('20:15') + appbar('My call consents', true) +
+      '<div class="ps-body"><div><span class="yr-tag">✓ YEONRAK</span></div><p class="ps-h">' + active + ' active consents</p>' +
+      '<p class="ps-small" style="margin:0">Every institution, one list. Open it from any partner app.</p>' +
+      '<div>' + ledger.map(function(l, i){
+        return '<div class="ledger-row' + (l.on ? '' : ' off') + '"><span class="org" style="background:' + l.color + '">' + l.org + '</span>' +
+          '<span class="txt"><b>' + esc(l.purpose) + '</b><span class="ps-small">' + esc(l.name) + ' · ' + esc(l.when) + '</span></span>' +
+          '<button type="button" class="tog" role="switch" aria-checked="' + l.on + '" aria-label="' + esc(l.name + ', ' + l.purpose) + '" data-toggle="' + i + '"></button></div>';
+      }).join('') + '</div></div>';
+  }
+
+  /* scenarios */
+  var scenarios = [
+    {
+      tab:'1 · You ask for a call', row:'Row A · Person initiated',
+      title:'You ask for a call, and choose when',
+      summary:'Inside the bank app you already use, you choose the purpose and the time. At that time, a verified call arrives.',
+      steps:[
+        { label:'Open your bank app', note:'Yeonrak sits inside ' + BANK + '\'s own app as a "Request a call" tile.', why:'No new app to download, so people do not have to change their behavior.', screen:function(){ return bankHome('09:41', true); } },
+        { label:'Choose the purpose', note:'You choose why you want the call. The agent sees it before dialling.', why:'Consent is given per purpose, not per institution.', screen:pickPurpose },
+        { label:'Choose the time', note:function(){ return state.priority ? 'You chose "Call me now" for ₩3,000: an agent calls within 1 minute.' : 'Pick a free day and one-hour window, or pay ₩3,000 to be called right now.'; }, why:function(){ return state.priority ? 'Premium is optional and only speeds up calls you asked for. Fraud and security calls are always free.' : 'You decide when, not the call-centre queue. Free is the default; priority is there for when minutes matter more than money.'; }, screen:pickWindow },
+        { label:function(){ return state.priority ? 'Pay with PASS' : 'Confirm with PASS'; }, note:function(){ return state.priority ? 'The same summary, plus the price. You pay only if the call connects within 1 minute.' : 'A summary of exactly what you are agreeing to, confirmed with the PASS check people already trust.'; }, why:'We build on PASS for identity. PASS proves who you are; Yeonrak proves what you agreed to.', screen:reviewConsent },
+        { label:function(){ return state.priority ? 'Calling you now' : 'Call booked'; }, note:'A confirmation, plus a reminder of what the real call will look like.', why:'People learn what a legitimate call looks like, so they can spot a fake one.', screen:booked },
+        { label:'The verified call arrives', note:'At the chosen time the call screen shows the purpose, the window you asked for, and when you agreed.', why:'Competitors answer "who is calling?". We also answer "why?" and "did I agree?".', screen:function(){ return incoming({ time:slotStart(), purpose:state.purpose, askedLabel:'You asked for', asked:askedFor(), agreed:'Wed 7 Oct, 09:41' }); } },
+        { label:'Straight to the point', note:'The agent already knows why you wanted the call. There is no menu and no re-verification.', why:'Institutions reach people who want to talk, and call-centre staff get conversations instead of rejection.', screen:function(){ return inCall({ time:slotStart(), text:'"Hello, this is ' + BANK + ' calling about your <b>' + esc(state.purpose.toLowerCase()) + '</b>, as you requested. You are already verified, so we can start right away."' }); } }
+      ]
+    },
+    {
+      tab:'2 · The bank asks first', row:'Row B · Institution initiated',
+      title:'The bank asks permission, then calls',
+      summary:'For something urgent, like a suspicious card payment, the bank asks first and states why. You accept, and the call arrives immediately.',
+      steps:[
+        { label:'Permission request', note:'A notification from the bank app: ' + BANK + ' wants to call about one specific thing.', why:'The institution starts the contact, but the phone does not ring until you agree.', screen:function(){ return lockNotif('16:05', 'May we call you now?', 'Unusual card payment: ₩1,280,000 at an overseas online store.'); } },
+        { label:'See the purpose and choose', note:'The request shows the purpose, the details, and your options: call now, call later, or no call.', why:'Two-way initiation: either side can start, and the person always decides.', screen:function(){ return permissionSheet({ time:'16:05', tag:'URGENT · SECURITY', title:'Card payment check', purpose:'Fraud check', extra:'<dt>Card</dt><dd>•••• 4821</dd><dt>Amount</dt><dd>₩1,280,000</dd>', notice:'Agreeing covers <b>this check only</b>. It does not allow any other call.', buttons:'<button type="button" class="pbtn tap" data-next>Call me now</button><button type="button" class="pbtn ghost">Call me at 18:00</button><button type="button" class="pbtn ghost">Freeze card, no call</button>' }); } },
+        { label:'The verified call arrives', note:'Seconds later, the call comes in with the purpose and the moment you agreed.', why:'Fraud alerts are the calls people most need to answer, and the calls scammers most often fake.', screen:function(){ return incoming({ time:'16:05', purpose:'Fraud check · card 4821', askedLabel:'Requested by', asked:BANK + ', 16:05', agreed:'Just now, 16:05' }); } },
+        { label:'Consent closes', note:'After the call, the permission is used up. It does not carry over to anything else.', why:'Trust stays high because a permission cannot quietly turn into marketing.', screen:function(){ return result('16:09', '✓', 'var(--p-good)', 'Card secured', 'The payment was blocked. This permission has been used and is now closed.'); } }
+      ]
+    },
+    {
+      tab:'3 · A new purpose', row:'Row B · Institution initiated',
+      title:'A new purpose means asking again',
+      summary:'You agreed to fraud alerts and a loan call. If the bank wants to talk about something else, such as a product offer, it has to ask, and you can say no.',
+      steps:[
+        { label:'A request for a new purpose', note:BANK + ' asks whether it may call about a savings offer.', why:'No cold calls. Offers are possible only as an opt-in request.', screen:function(){ return lockNotif('12:30', 'May we call you about a new savings plan?', 'You have not agreed to calls about offers. Tap to decide.'); } },
+        { label:'Decide', note:'The request clearly says this is a new purpose, separate from what you already agreed to.', why:'Consent is per purpose. A fraud-alert consent is not a sales consent.', screen:function(){ return permissionSheet({ time:'12:30', tag:'NEW PURPOSE', title:'Savings plan offer', purpose:'Product offer', extra:'<dt>Already agreed</dt><dd>Fraud alerts, loan call</dd>', notice:'Saying no here does not affect your fraud alerts or your loan call.', buttons:'<button type="button" class="pbtn ghost">Yes, call me</button><button type="button" class="pbtn tap" data-next>Not interested</button>' }); } },
+        { label:'Declined', note:'The bank cannot call you about offers. Everything else stays as it was.', why:'People keep control, so they keep answering the calls that matter.', screen:function(){ return result('12:30', '⊘', 'var(--p-soft)', 'No offer calls', BANK + ' will not call you about offers. Your fraud alerts and loan call are unchanged.'); } }
+      ]
+    },
+    {
+      tab:'4 · A fake call', row:'Protection',
+      title:'A call with no consent is flagged',
+      summary:'A scammer calls pretending to be the bank. You have nothing scheduled, so the call screen warns you.',
+      steps:[
+        { label:'Unknown caller, no consent', note:'The call screen shows there is no Yeonrak consent on record for this call.', why:'Impersonation is the core of voice phishing. A real institutional call always shows its purpose. (Showing this on the call screen would need a carrier partnership.)', screen:warnCall },
+        { label:'Check in the bank app', note:'In the bank app you can see right away that no call is scheduled.', why:'One source of truth beats guessing from a phone number.', screen:checkCalls },
+        { label:'Reported', note:'The number goes to the bank\'s fraud team.', why:'Every flagged call helps institutions protect other customers.', screen:function(){ return result('16:28', '✓', 'var(--p-good)', 'Number reported', '070-4812-3390 was sent to ' + BANK + '\'s fraud team. Thank you for checking.'); } }
+      ]
+    },
+    {
+      tab:'5 · All your consents', row:'The consent record',
+      title:'One list of every call you agreed to',
+      summary:'Every consent you have given, across every institution, in one place. Turn any of them off at any time.',
+      steps:[
+        { label:'Your consent record', note:'Bank, insurer and hospital in one list, open from any partner app. Try the switches.', why:'A bank\'s own callback button only covers that bank. One record across all institutions is what is hard to copy.', screen:ledgerScreen }
+      ]
+    }
+  ];
+
+  var tabsEl = document.getElementById('scnTabs');
+  var screenEl = document.getElementById('phoneScreen');
+  var listEl = document.getElementById('stepList');
+  var backBtn = document.getElementById('stepBack');
+  var nextBtn = document.getElementById('stepNext');
+  var sIdx = 0, stepIdx = 0;
+
+  tabsEl.innerHTML = scenarios.map(function(s, i){
+    return '<button type="button" class="scn-tab" role="tab" data-scn="' + i + '">' + s.tab + '</button>';
+  }).join('');
+
+  function txt(v){ return typeof v === 'function' ? v() : v; }
+
+  function render(){
+    var s = scenarios[sIdx], st = s.steps[stepIdx];
+    tabsEl.querySelectorAll('.scn-tab').forEach(function(t, i){ t.setAttribute('aria-selected', i === sIdx ? 'true' : 'false'); });
+    document.getElementById('scnRow').textContent = s.row;
+    document.getElementById('scnTitle').textContent = s.title;
+    document.getElementById('scnSummary').textContent = s.summary;
+    document.getElementById('stepNote').textContent = txt(st.note);
+    document.getElementById('stepWhy').textContent = txt(st.why);
+    listEl.innerHTML = s.steps.map(function(x, i){
+      var cls = i === stepIdx ? 'is-current' : (i < stepIdx ? 'is-done' : '');
+      return '<li class="' + cls + '"><button type="button" data-step="' + i + '"' + (i === stepIdx ? ' aria-current="step"' : '') + '><span class="sn">' + (i < stepIdx ? '✓' : String(i + 1).padStart(2, '0')) + '</span><span>' + txt(x.label) + '</span></button></li>';
+    }).join('');
+    screenEl.innerHTML = st.screen();
+    backBtn.disabled = sIdx === 0 && stepIdx === 0;
+    var last = stepIdx === s.steps.length - 1;
+    nextBtn.textContent = last ? (sIdx < scenarios.length - 1 ? 'Next scenario →' : 'Start over ↺') : 'Next →';
+  }
+
+  function next(){
+    var s = scenarios[sIdx];
+    if(stepIdx < s.steps.length - 1){ stepIdx++; }
+    else { sIdx = (sIdx + 1) % scenarios.length; stepIdx = 0; }
+    render();
+  }
+  function back(){
+    if(stepIdx > 0){ stepIdx--; }
+    else if(sIdx > 0){ sIdx--; stepIdx = scenarios[sIdx].steps.length - 1; }
+    render();
+  }
+
+  nextBtn.addEventListener('click', next);
+  backBtn.addEventListener('click', back);
+  tabsEl.addEventListener('click', function(e){
+    var t = e.target.closest('[data-scn]'); if(!t) return;
+    sIdx = +t.getAttribute('data-scn'); stepIdx = 0; render();
+  });
+  listEl.addEventListener('click', function(e){
+    var b = e.target.closest('[data-step]'); if(!b) return;
+    stepIdx = +b.getAttribute('data-step'); render();
+  });
+  screenEl.addEventListener('click', function(e){
+    var tog = e.target.closest('[data-toggle]');
+    if(tog){
+      var item = ledger[+tog.getAttribute('data-toggle')];
+      item.on = !item.on;
+      item.when = item.on ? 'Agreed just now' : 'Withdrawn just now';
+      screenEl.innerHTML = ledgerScreen();
+      return;
+    }
+    var setEl = e.target.closest('[data-set]');
+    if(setEl){
+      var key = setEl.getAttribute('data-set');
+      state[key] = setEl.getAttribute('data-val');
+      if(key === 'day' || key === 'slot'){ state.priority = ''; }
+      if(!setEl.hasAttribute('data-next')){ render(); return; }
+    }
+    if(e.target.closest('[data-next]')){ next(); }
+  });
+
+  render();
 })();
 </script>
