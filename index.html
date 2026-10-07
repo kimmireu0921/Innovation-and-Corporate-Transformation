@@ -352,9 +352,18 @@
     .navbar .wrap{padding-inline:0;}
     .navbar .mark{display:none;}
     .view-tabs{justify-content:stretch;}
-    .view-tab{flex:1 1 0;font-size:1.1rem;padding:13px 6px 10px;}
+    .view-tab{flex:1 1 0;font-size:1.05rem;padding:13px 4px 10px;}
+    .view-tab .vt-n{display:none;}
     section{scroll-margin-top:96px;}
   }
+
+  /* ---------- founders ---------- */
+  .founders{list-style:none;padding:0;margin:2.4em 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;}
+  .founder{display:flex;flex-direction:column;align-items:flex-start;gap:6px;border:1px solid var(--line);border-radius:4px;background:var(--surface);padding:22px 20px 24px;}
+  .avatar{width:64px;height:64px;border-radius:50%;background:var(--accent);color:var(--on-accent);display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-weight:700;font-size:1.05rem;letter-spacing:0.04em;margin-bottom:8px;}
+  .founder:nth-child(2n) .avatar{background:var(--accent-2);}
+  .f-name{font-family:'Big Shoulders Display',sans-serif;font-weight:700;font-size:1.45rem;line-height:1.1;}
+  .f-role{font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft);}
 
   /* ---------- demo layout ---------- */
   .demo-section{padding-top:clamp(24px,4vw,48px);}
@@ -530,6 +539,7 @@
         <a href="#top" class="view-tab" data-view="home"><span class="vt-n">01</span>Overview</a>
         <a href="#strategy" class="view-tab" data-view="strategy"><span class="vt-n">02</span>Strategy</a>
         <a href="#demo" class="view-tab" data-view="demo"><span class="vt-n">03</span>Phone demo</a>
+        <a href="#team" class="view-tab" data-view="team"><span class="vt-n">04</span>Founders</a>
       </nav>
     </div>
   </div>
@@ -917,9 +927,31 @@
 </section>
 </main>
 
+<main id="teamView" hidden>
+<section class="demo-section">
+  <div class="wrap">
+    <p class="eyebrow">Founders</p>
+    <h2 class="demo-h2">The team behind Yeonrak</h2>
+    <p class="prose">Yeonrak (연락) was founded as a class project by Team 2 in Innovation and Corporate Transformation at Yonsei GSIS, Fall 2026.</p>
+    <ul class="founders">
+      <li class="founder"><span class="avatar" aria-hidden="true">MK</span><span class="f-name">Mimi Kim Mireu</span><span class="f-role">Co-founder</span></li>
+      <li class="founder"><span class="avatar" aria-hidden="true">GU</span><span class="f-name">Gerry Unger</span><span class="f-role">Co-founder</span></li>
+      <li class="founder"><span class="avatar" aria-hidden="true">PA</span><span class="f-name">Pia Antunez Giachero</span><span class="f-role">Co-founder</span></li>
+      <li class="founder"><span class="avatar" aria-hidden="true">KJ</span><span class="f-name">Kenza Jbiha</span><span class="f-role">Co-founder</span></li>
+      <li class="founder"><span class="avatar" aria-hidden="true">DC</span><span class="f-name">Donny Chen Yi Tang</span><span class="f-role">Co-founder</span></li>
+    </ul>
+    <div class="fit-box">
+      <p class="eyebrow">What we set out to do</p>
+      <p>Make every call from an institution real, and make it come when you asked for it.</p>
+      <div class="cta-row"><a class="btn primary" href="#strategy">Read our strategy →</a><a class="btn ghost" href="#demo">Try the phone demo →</a></div>
+    </div>
+  </div>
+</section>
+</main>
+
 <footer class="wrap">
   <span>Prepared for Innovation &amp; Corporate Transformation, Team 2 — Playing to Win.</span>
-  <span>Winning Aspiration → Where to Play → How to Win</span>
+  <span>Mimi Kim Mireu · Gerry Unger · Pia Antunez Giachero · Kenza Jbiha · Donny Chen Yi Tang</span>
 </footer>
 
 <script>
@@ -1005,21 +1037,23 @@
   var home = document.getElementById('homeView');
   var demo = document.getElementById('demoView');
   var strategy = document.getElementById('strategyView');
+  var team = document.getElementById('teamView');
   var tabs = document.querySelectorAll('.view-tab');
   var current = null;
 
   function show(){
     var h = location.hash;
-    var view = h === '#demo' ? 'demo' : (h.indexOf('#strategy') === 0 ? 'strategy' : 'home');
+    var view = h === '#demo' ? 'demo' : h === '#team' ? 'team' : (h.indexOf('#strategy') === 0 ? 'strategy' : 'home');
     home.hidden = view !== 'home';
     demo.hidden = view !== 'demo';
     strategy.hidden = view !== 'strategy';
+    team.hidden = view !== 'team';
     tabs.forEach(function(t){
       var on = t.getAttribute('data-view') === view;
       t.classList.toggle('is-active', on);
       if(on){ t.setAttribute('aria-current','page'); } else { t.removeAttribute('aria-current'); }
     });
-    var target = h.length > 1 && h !== '#strategy' && h !== '#demo' ? document.getElementById(h.slice(1)) : null;
+    var target = h.length > 1 && h !== '#strategy' && h !== '#demo' && h !== '#team' ? document.getElementById(h.slice(1)) : null;
     if(target){ target.scrollIntoView(); }
     else if(view !== current || h === '#top' || !h){ window.scrollTo(0,0); }
     current = view;
