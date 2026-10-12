@@ -357,6 +357,17 @@
     section{scroll-margin-top:96px;}
   }
 
+  /* ---------- references ---------- */
+  a.ref{color:inherit;text-decoration:underline dotted;text-decoration-color:var(--accent);text-underline-offset:3px;text-decoration-thickness:1.5px;}
+  a.ref:hover{color:var(--accent);text-decoration-style:solid;}
+  .update-note{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:16px;padding:14px 16px;border:1px solid color-mix(in srgb, var(--accent-2) 40%, var(--line));border-radius:4px;background:color-mix(in srgb, var(--accent-2) 8%, var(--bg));text-decoration:none;color:var(--ink);font-size:0.98rem;}
+  .update-note:hover{border-color:var(--accent-2);}
+  .src-note{font-family:'Space Mono',monospace;font-size:0.72rem;color:var(--ink-soft);margin:12px 0 0;}
+  .src-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px 40px;margin-top:2em;}
+  .src-grid h4{font-family:'Space Mono',monospace;font-size:0.74rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin:0 0 8px;}
+  .src-grid ul{margin:0;padding-left:1.1em;display:flex;flex-direction:column;gap:6px;font-size:0.93rem;color:var(--ink-soft);}
+  .src-grid a.ref{color:var(--ink);}
+
   /* ---------- founders ---------- */
   .founders{list-style:none;padding:0;margin:2.4em 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;}
   .founder{display:flex;flex-direction:column;align-items:flex-start;gap:6px;border:1px solid var(--line);border-radius:4px;background:var(--surface);padding:0 0 22px;overflow:hidden;}
@@ -724,8 +735,8 @@
     <div class="evidence">
       <div class="ev-row"><span class="ev-label">PASS 본인인증</span><p>Korea already trusts a single, cross-carrier identity layer for banking, e-commerce, even government sites. Yeonrak extends that same habit to phone calls.</p></div>
       <div class="ev-row"><span class="ev-label">개인정보보호법 · 정보통신망법</span><p>Telemarketing already legally requires opt-in consent. Most cold calling today already breaks that rule. Yeonrak isn't a new constraint on business — it's the compliant lane that already exists on paper.</p></div>
-      <div class="ev-row"><span class="ev-label">후후 · Whoscall</span><p>Spam-blocking apps are already mainstream here. That's proof of demand for control over who calls you — Yeonrak offers the other half: control over who calls you back.</p></div>
-      <div class="ev-row"><span class="ev-label">보이스피싱</span><p>Voice phishing costs Korean households real money every year, largely by impersonating banks and public agencies. A verified callback channel makes that impersonation much harder to pull off.</p></div>
+      <div class="ev-row"><span class="ev-label">후후 · Whoscall</span><p>Spam-blocking apps are already mainstream here, and voice spam per person <a class="ref" href="https://www.digitaltoday.co.kr/jp/view/55415/voice-spam-doubles-in-2025-h2-after-mobile-handset-subsidy-law-repeal" target="_blank" rel="noopener">doubled in late 2025</a>. That's proof of demand for control over who calls you — Yeonrak offers the other half: control over who calls you back.</p></div>
+      <div class="ev-row"><span class="ev-label">보이스피싱</span><p>Voice phishing costs Korean households real money every year, largely by impersonating banks and public agencies, and <a class="ref" href="https://www.koreatimes.co.kr/economy/20260729/banks-face-full-liability-for-voice-phishing-compensation" target="_blank" rel="noopener">banks may soon have to pay for those losses</a>. A verified callback channel makes that impersonation much harder to pull off.</p></div>
     </div>
   </div>
 </section>
@@ -782,9 +793,11 @@
       <a class="cas done" href="#strategy-aspiration"><span class="cn">01</span><b>Winning Aspiration</b><span class="cs">Presented 21 Sep</span></a>
       <a class="cas done" href="#strategy-where"><span class="cn">02</span><b>Where to Play</b><span class="cs">This step</span></a>
       <a class="cas done" href="#strategy-how"><span class="cn">03</span><b>How to Win</b><span class="cs">This step</span></a>
-      <span class="cas next"><span class="cn">04</span><b>Capabilities</b><span class="cs">Coming next</span></span>
-      <span class="cas next"><span class="cn">05</span><b>Management Systems</b><span class="cs">Coming next</span></span>
+      <a class="cas done" href="#strategy-capabilities"><span class="cn">04</span><b>Capabilities</b><span class="cs">Draft · 12 Oct</span></a>
+      <a class="cas done" href="#strategy-management"><span class="cn">05</span><b>Management Systems</b><span class="cs">Draft · 12 Oct</span></a>
     </nav>
+    <a class="update-note" href="#strategy-feasibility"><span class="chip good">Updated 12 Oct</span> After the professor's feedback on our reliance on other institutions, we checked feasibility against real-world evidence and revised the launch plan. Read the feasibility check →</a>
+    <p class="src-note">Links with a dotted underline open the source behind each claim. Full list under <a href="#strategy-sources">References</a>.</p>
   </div>
 </section>
 
@@ -806,17 +819,17 @@
 <section id="strategy-where">
   <div class="wrap">
     <p class="eyebrow">02 · Where to Play</p>
-    <h2>Regulated institutions in Korea, starting with banks</h2>
+    <h2>Regulated institutions in Korea, starting where we can go live fastest</h2>
     <p class="prose">Where to Play is a set of choices about where we compete, and just as much about where we don't.</p>
 
     <div class="statement wtp">
       <div class="stm-head"><span>Dimension</span><span>We play</span><span>We don't play</span></div>
       <div class="stm-row"><span class="item">Geography</span><span class="how">South Korea first. The problem, the PASS identity layer and the phishing losses are all Korean.</span><span class="how no">A global launch. Other markets come after Korea proves the model.</span></div>
-      <div class="stm-row"><span class="item">Customer (who pays)</span><span class="how">Regulated institutions that must reach people: banks first, then insurers and large hospitals.</span><span class="how no">Small shops, telemarketers, cold callers.</span></div>
+      <div class="stm-row"><span class="item">Customer (who pays)</span><span class="how">Regulated institutions that must reach people. We start with those that can't easily build this themselves: insurance agencies and hospitals. Savings banks and card companies come next, and large banks once we can show results.</span><span class="how no">Small shops, telemarketers, cold callers.</span></div>
       <div class="stm-row"><span class="item">User</span><span class="how">The customers of those institutions. Basic use is free.</span><span class="how no">Charging people for protection.</span></div>
       <div class="stm-row"><span class="item">Offering</span><span class="how">Consent-based service calls: fraud alerts, account issues, claims and renewals, medical results, appointments, callbacks.</span><span class="how no">Cold sales calls, spam blocking, caller ID on its own.</span></div>
-      <div class="stm-row"><span class="item">Channel</span><span class="how">Embedded in the institution's own app (an SDK), so people use the apps they already have.</span><span class="how no">A separate app or website people must download or visit.</span></div>
-      <div class="stm-row"><span class="item">Value-chain position</span><span class="how">The consent layer between institution and person. Identity comes from PASS and the carriers.</span><span class="how no">Telephony, call-centre software, our own identity system.</span></div>
+      <div class="stm-row"><span class="item">Channel</span><span class="how">At launch, a <a class="ref" href="https://blog.bizgo.io/?p=3317" target="_blank" rel="noopener">KakaoTalk business message or RCS text</a> with a button that opens a Yeonrak web page. Embedding in the institution's own app comes later and is optional.</span><span class="how no">A separate app or website people must download or visit.</span></div>
+      <div class="stm-row"><span class="item">Value-chain position</span><span class="how">The consent layer between institution and person. We buy identity checks and <a class="ref" href="https://enterprise.kt.com/pd/P_PD_CC_TE_006.do" target="_blank" rel="noopener">caller-name display</a> as services, from more than one supplier.</span><span class="how no">Telephony, call-centre software, our own identity system or call screen.</span></div>
     </div>
 
     <div class="wtp-grid">
@@ -826,11 +839,11 @@
         <p>Our customers are not chosen by size. We serve institutions where an unanswered call means real loss: money stolen, a claim delayed, a test result missed. That is where consent before the call is worth paying for.</p>
       </div>
       <div class="rule-card">
-        <p class="eyebrow">Why banks first</p>
+        <p class="eyebrow">Why big banks are not first</p>
         <ul class="ticks">
-          <li>Voice phishing hits banks directly, and they are under pressure to warn customers.</li>
-          <li>High call volume: fraud alerts, loans, account issues.</li>
-          <li>Their apps already verify identity, so embedding Yeonrak is a small step.</li>
+          <li>They can build a simple version themselves: KB already lets customers <a class="ref" href="https://kbthink.com/life/daily/bank-waiting-time.html" target="_blank" rel="noopener">book consultations in its app</a>.</li>
+          <li>Outside software that handles customers' personal or credit data <a class="ref" href="https://m.ddaily.co.kr/page/view/2026011915062265051" target="_blank" rel="noopener">still needs special approval</a>, a review of <a class="ref" href="https://www.unicornfactory.co.kr/article/2024071509272854395" target="_blank" rel="noopener">30 to 120 days</a>.</li>
+          <li>They remain the biggest prize: a <a class="ref" href="https://www.koreatimes.co.kr/economy/20260729/banks-face-full-liability-for-voice-phishing-compensation" target="_blank" rel="noopener">proposed rule</a> would make banks pay for voice phishing losses.</li>
         </ul>
       </div>
       <div class="rule-card">
@@ -840,10 +853,10 @@
     </div>
 
     <div class="phases">
-      <div class="phase"><span class="pn num">PHASE 1</span><b>Banks</b><span>Fraud alerts, loans, account issues</span></div>
-      <div class="phase"><span class="pn num">PHASE 2</span><b>Insurers &amp; large hospitals</b><span>Claims, renewals, results, appointments</span></div>
-      <div class="phase"><span class="pn num">PHASE 3</span><b>Public institutions</b><span>Slower procurement, same need</span></div>
-      <div class="phase"><span class="pn num">LATER</span><b>Beyond Korea</b><span>Markets with the same trust problem</span></div>
+      <div class="phase"><span class="pn num">PHASE 1 · REVISED 12 OCT</span><b>Insurance agencies &amp; hospitals</b><span>Claims, renewals, results, appointments. Fast buyers with little in-house IT</span></div>
+      <div class="phase"><span class="pn num">PHASE 2</span><b>Savings banks &amp; card companies</b><span>Fraud alerts and account issues, with phase-1 results as proof</span></div>
+      <div class="phase"><span class="pn num">PHASE 3</span><b>Large banks</b><span>Once answer-rate results are proven</span></div>
+      <div class="phase"><span class="pn num">LATER</span><b>Public institutions, beyond Korea</b><span>Slower procurement, same need</span></div>
     </div>
 
     <p class="closer-line">On sales calls: no call rings without consent for that purpose. An institution may <em>ask</em> to call about something new, such as an offer, and the person can decline. Consent is per purpose, not per institution. (Shown in the <a href="#demo">phone demo</a>, scenario 3.)</p>
@@ -865,9 +878,9 @@
     <h3 class="sub-h">Why we beat each competitor</h3>
     <div class="statement">
       <div class="stm-head"><span>Competitor</span><span>What they do well</span><span>Why we win</span></div>
-      <div class="stm-row"><span class="item">Whoscall, 후후</span><span class="how">Installed on millions of phones; identify and block spam.</span><span class="how">They need a separate app and only label numbers. We sit inside apps people already use and show the purpose of the call.</span></div>
-      <div class="stm-row"><span class="item">Carriers &amp; PASS</span><span class="how">Own verified identity for the whole country; block calls on the network.</span><span class="how">PASS proves who you are. Yeonrak proves what you agreed to, for what purpose, and when. We build on them as partners rather than compete.</span></div>
-      <div class="stm-row"><span class="item">A bank's own callback button</span><span class="how">Already built, already trusted, no third party.</span><span class="how">It only works inside one bank, so the phone still rings from everyone else. We are one consent record across every institution.</span></div>
+      <div class="stm-row"><span class="item">Whoscall, 후후</span><span class="how">Installed on millions of phones; identify and block spam.</span><span class="how">They need a separate app and only label numbers. We reach people through KakaoTalk, text messages and the apps they already use, and we show the purpose of the call.</span></div>
+      <div class="stm-row"><span class="item">Carriers, PASS, Apple, Samsung</span><span class="how">Own identity and the call screen. Carriers already <a class="ref" href="https://enterprise.kt.com/pd/P_PD_CC_TE_006.do" target="_blank" rel="noopener">sell caller-name display</a> to businesses; <a class="ref" href="https://www.apple.com/au/newsroom/2024/10/apple-expands-tools-to-help-businesses-connect-with-customers" target="_blank" rel="noopener">Apple</a> and <a class="ref" href="https://www.businesswire.com/news/home/20250402239592/en/Hiya-and-Samsung-Extend-Strategic-Partnership-Through-2028" target="_blank" rel="noopener">Samsung with Hiya</a> show verified business names.</span><span class="how">They show who is calling. Yeonrak records what you agreed to, for what purpose, and when. We buy their services rather than compete with them.</span></div>
+      <div class="stm-row"><span class="item">A bank's own callback button</span><span class="how">Already built (<a class="ref" href="https://kbthink.com/life/daily/bank-waiting-time.html" target="_blank" rel="noopener">KB</a> and others), already trusted, no third party.</span><span class="how">It only works inside one bank, so the phone still rings from everyone else. We are one consent record across every institution.</span></div>
       <div class="stm-row"><span class="item">The ignored call</span><span class="how">Free, instant, needs no app.</span><span class="how">Ignoring calls also blocks the fraud alert and the hospital result. We make the calls that matter safe to answer.</span></div>
     </div>
 
@@ -875,15 +888,143 @@
     <div class="plates five">
       <div class="plate"><span class="jack"></span><span class="tag">CHOICE 01</span><h3>Per-purpose consent</h3><p>Every call is tied to one stated purpose. Agreeing to a fraud alert is not agreeing to a sales call.</p></div>
       <div class="plate"><span class="jack"></span><span class="tag">CHOICE 02</span><h3>Two-way start</h3><p>The person can request a call and pick the time, or the institution can ask permission. Nothing rings until the person agrees.</p></div>
-      <div class="plate"><span class="jack"></span><span class="tag">CHOICE 03</span><h3>Nothing to download</h3><p>Embedded in the apps people already use, so we don't ask anyone to change their behaviour.</p></div>
+      <div class="plate"><span class="jack"></span><span class="tag">CHOICE 03</span><h3>Nothing to download</h3><p>Works through KakaoTalk, text messages and, later, the apps people already use, so we don't ask anyone to change their behaviour.</p></div>
       <div class="plate"><span class="jack"></span><span class="tag">CHOICE 04</span><h3>Value on both ends</h3><p>People answer with confidence; institutions reach the people they need to reach, and call-centre staff get conversations instead of rejection.</p></div>
       <div class="plate plate-key"><span class="jack"></span><span class="tag">CHOICE 05 · HARDEST TO COPY</span><h3>One record across institutions</h3><p>Every consent, from every bank, insurer and hospital, in one place. Each new institution makes the record more useful for people and for every other institution.</p></div>
     </div>
 
     <div class="fit-box">
       <p class="eyebrow">Why the choices fit together</p>
-      <p>Where to Play and How to Win reinforce each other. Regulated, high-stakes calls are exactly where per-purpose consent is worth paying for, and embedding works because those institutions already have apps with verified identity.</p>
+      <p>Where to Play and How to Win reinforce each other. Regulated, high-stakes calls are exactly where per-purpose consent is worth paying for, and starting with KakaoTalk and text messages lets us go live without each institution changing its systems.</p>
       <div class="cta-row"><a class="btn primary" href="#demo">See it in the phone demo →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEASIBILITY CHECK -->
+<section id="strategy-feasibility">
+  <div class="wrap">
+    <p class="eyebrow">Feasibility check · after feedback on 12 Oct</p>
+    <h2>"Doesn't this rely too much on other institutions?"</h2>
+    <p class="prose">The professor asked whether Yeonrak is feasible when it depends on banks, carriers and PASS. We checked our plan against real-world evidence. Some of the concern is right, the core idea holds, and we changed how we launch.</p>
+
+    <h3 class="sub-h">Where the concern is right</h3>
+    <div class="statement">
+      <div class="stm-head"><span>What our pitch relied on</span><span>What we found</span><span>Risk</span></div>
+      <div class="stm-row"><span class="item">Banks embedding us in their apps</span><span class="how">KB already lets customers <a class="ref" href="https://www.smarttoday.co.kr/ko-kr/articles/87156" target="_blank" rel="noopener">book phone and video consultations</a> in its app, and other banks have similar booking services.</span><span class="how no">Banks can build the simple version themselves, and they buy slowly.</span></div>
+      <div class="stm-row"><span class="item">Selling software to banks</span><span class="how">Banking rules on outside cloud software <a class="ref" href="https://m.ddaily.co.kr/page/view/2026011915062265051" target="_blank" rel="noopener">were relaxed in January 2026</a>, but software handling personal or credit data is still excluded. It needs a special approval, with a review of <a class="ref" href="https://www.unicornfactory.co.kr/article/2024071509272854395" target="_blank" rel="noopener">30 days, up to 120</a>.</span><span class="how no">A long, uncertain sales cycle for a startup.</span></div>
+      <div class="stm-row"><span class="item">Owning the call screen</span><span class="how"><a class="ref" href="https://enterprise.kt.com/pd/P_PD_CC_TE_006.do" target="_blank" rel="noopener">KT</a>, <a class="ref" href="https://biz.skbroadband.com/page.do?menu_id=P01030400" target="_blank" rel="noopener">SK Broadband</a> and <a class="ref" href="https://www.lguplus.com/biz/all/telecom/lines/domestic/B000000024" target="_blank" rel="noopener">LG U+</a> already sell caller-name display to businesses (KT from ₩3,300 a month). <a class="ref" href="https://www.apple.com/au/newsroom/2024/10/apple-expands-tools-to-help-businesses-connect-with-customers" target="_blank" rel="noopener">Apple</a> and <a class="ref" href="https://www.businesswire.com/news/home/20250402239592/en/Hiya-and-Samsung-Extend-Strategic-Partnership-Through-2028" target="_blank" rel="noopener">Samsung via Hiya</a> do the same.</span><span class="how no">Carriers and phone makers own the call screen, not us.</span></div>
+      <div class="stm-row"><span class="item">Showing the purpose on the call screen</span><span class="how">Google built this (name, logo and reason for the call) and <a class="ref" href="https://support.exotel.com/support/solutions/articles/3000112380-google-verified-calls" target="_blank" rel="noopener">shut it down in January 2023</a>. <a class="ref" href="https://enterprise.kt.com/pd/P_PD_CC_TE_006.do" target="_blank" rel="noopener">KT's display</a> allows 8 Korean characters and two changes a month.</span><span class="how no">Not possible today without a carrier or phone-maker deal.</span></div>
+    </div>
+
+    <h3 class="sub-h">Why the idea still holds</h3>
+    <div class="wtp-grid">
+      <div class="rule-card">
+        <p class="eyebrow">Banks may soon pay</p>
+        <p>A <a class="ref" href="https://www.koreatimes.co.kr/economy/20260729/banks-face-full-liability-for-voice-phishing-compensation" target="_blank" rel="noopener">proposal sent to the National Assembly</a> in July 2026 would make banks reimburse voice phishing losses, split 50/50 between the two banks involved, capped at ₩10–50M per case. The regulator estimates up to <a class="ref" href="https://en.sedaily.com/finance/2026/04/01/no-fault-voice-phishing-liability-could-cost-financial" target="_blank" rel="noopener">₩281.1bn a year</a>. The bill is <a class="ref" href="https://www.asiae.co.kr/en/article/in-depth/2026100815284602268" target="_blank" rel="noopener">still pending</a>, and <a class="ref" href="https://www.koreatimes.co.kr/economy/20260727/banks-push-back-against-proposed-no-fault-compensation-for-voice-phishing-victims" target="_blank" rel="noopener">banks are pushing back</a>.</p>
+      </div>
+      <div class="rule-card">
+        <p class="eyebrow">The problem is growing</p>
+        <p>Voice spam per person <a class="ref" href="https://www.digitaltoday.co.kr/jp/view/55415/voice-spam-doubles-in-2025-h2-after-mobile-handset-subsidy-law-repeal" target="_blank" rel="noopener">doubled</a> in the second half of 2025, from 2.13 to 4.26 calls a month (<a class="ref" href="https://www.radiokorea.com/news/article.php?uid=495267" target="_blank" rel="noopener">KCC/KISA survey</a>). A May 2026 law <a class="ref" href="https://edaily.co.kr/News/Read?mediaCodeNo=257&newsId=05546486645448264" target="_blank" rel="noopener">bans devices that fake caller numbers</a>, and 130 financial firms now <a class="ref" href="https://www.koreatimes.co.kr/economy/policy/20251029/korea-launches-ai-based-platform-to-bolster-fight-against-voice-phishing" target="_blank" rel="noopener">share phishing data</a>.</p>
+      </div>
+      <div class="rule-card">
+        <p class="eyebrow">Showing who and why works</p>
+        <p>In a 2025 CTIA survey, <a class="ref" href="https://www.nuso.cloud/blog/branding-calls-in-a-trust-based-era" target="_blank" rel="noopener">80% of people had stopped answering unknown numbers</a>, and 76% would answer with a name, logo or reason. Vendors report answer rates up by <a class="ref" href="https://transnexus.com/blog/2025/branded-calling-improves-trust-call-answer-rates/" target="_blank" rel="noopener">40–130%</a> (their own figures).</p>
+      </div>
+    </div>
+    <p class="closer-line">Nobody records consent per purpose yet. Carriers answer "who is calling", and banks' booking buttons work only inside one bank. Our difference holds; how we deliver it had to change.</p>
+
+    <h3 class="sub-h">The redesign: buy existing services, don't depend on partners</h3>
+    <div class="statement">
+      <div class="stm-head"><span>Dependency</span><span>Before</span><span>After</span></div>
+      <div class="stm-row"><span class="item">Institution apps</span><span class="how">Each institution builds our kit into its app.</span><span class="how">No app work at launch. The institution sends a <a class="ref" href="https://blog.bizgo.io/inside/alimtalk-price-by-volume/" target="_blank" rel="noopener">KakaoTalk business message</a> (about ₩6 each) or <a class="ref" href="https://news.sktelecom.com/198590" target="_blank" rel="noopener">RCS text</a> with a "Choose a time" button that opens a Yeonrak web page. Embedding in apps comes later and is optional.</span></div>
+      <div class="stm-row"><span class="item">Carriers</span><span class="how">A custom deal to show the purpose on the call screen.</span><span class="how">We buy the existing <a class="ref" href="https://enterprise.kt.com/pd/P_PD_CC_TE_006.do" target="_blank" rel="noopener">caller-name display</a> for our customers. The purpose appears in the message before the call and on the Yeonrak page.</span></div>
+      <div class="stm-row"><span class="item">PASS</span><span class="how">A partnership.</span><span class="how">Identity checks bought as a service from several suppliers (PASS, Kakao, Naver, Toss).</span></div>
+      <div class="stm-row"><span class="item">First customers</span><span class="how">Large banks.</span><span class="how">Insurance agencies and hospitals: Korea's two main clinic-records providers alone run <a class="ref" href="https://www.newstomato.com/ReadNews.aspx?no=802521" target="_blank" rel="noopener">about 20,000 clinic systems</a>. Then savings banks and card companies; large banks once we have proof.</span></div>
+      <div class="stm-row"><span class="item">Approval</span><span class="how">Not planned.</span><span class="how">Apply for the regulatory sandbox, as <a class="ref" href="https://www.telecompaper.com/news/kt-gets-approval-to-run-real-time-voice-phishing-detection--1516041" target="_blank" rel="noopener">KT did</a> for its voice-phishing detection service.</span></div>
+    </div>
+
+    <div class="fit-box">
+      <p class="eyebrow">Our answer</p>
+      <p>Every B2B company depends on its customers, but we shouldn't depend on partners changing their systems. At launch we need one paying customer at a time and services anyone can buy, not big institutions agreeing to work with us. This is the classic way to <a class="ref" href="https://platformchronicles.substack.com/p/the-chicken-and-egg-problem-of-marketplaces" target="_blank" rel="noopener">start a two-sided platform</a>: serve one side well first, then add the network.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 04 CAPABILITIES -->
+<section id="strategy-capabilities" class="tint">
+  <div class="wrap">
+    <p class="eyebrow">04 · Capabilities · draft</p>
+    <h2>Five things we must be best at</h2>
+    <p class="prose">Playing to Win asks for the few activities that make the strategy work and reinforce each other, not everything a company does.</p>
+    <div class="plates five">
+      <div class="plate"><span class="jack"></span><span class="tag">CAPABILITY 01</span><h3>Live in days, not months</h3><p>A no-code console and ready-made <a class="ref" href="https://blog.bizgo.io/inside/alimtalk-price-by-volume/" target="_blank" rel="noopener">KakaoTalk</a> and RCS templates, so a new customer needs no IT project.</p></div>
+      <div class="plate plate-key"><span class="jack"></span><span class="tag">CAPABILITY 02 · CORE</span><h3>The consent record</h3><p>Per purpose, time-stamped and revocable. It doubles as proof of consent for marketing calls, which Korean law already requires, so customers have a legal reason to buy.</p></div>
+      <div class="plate"><span class="jack"></span><span class="tag">CAPABILITY 03</span><h3>Vetting and matching</h3><p>Check every institution before it can use Yeonrak, as <a class="ref" href="https://www.fierce-network.com/wireless/first-orion-surpasses-1-billion-branded-calls" target="_blank" rel="noopener">US branded-calling firms do</a>, and confirm each call matches a consent on record.</p></div>
+      <div class="plate"><span class="jack"></span><span class="tag">CAPABILITY 04</span><h3>Proving the answer rate</h3><p>Measure each customer's answer rate before and after. It is the main sales argument and the basis for charging per answered call.</p></div>
+      <div class="plate"><span class="jack"></span><span class="tag">CAPABILITY 05</span><h3>Several suppliers for everything</h3><p>Messaging, identity and caller display from more than one supplier, so no single partner can shut us down.</p></div>
+    </div>
+    <div class="fit-box">
+      <p class="eyebrow">How they reinforce each other</p>
+      <p>Fast onboarding brings more institutions; more institutions make the consent record more useful; a trusted record raises answer rates; proven answer rates win the next customer.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 05 MANAGEMENT SYSTEMS -->
+<section id="strategy-management">
+  <div class="wrap">
+    <p class="eyebrow">05 · Management Systems · draft</p>
+    <h2>The systems that keep the capabilities working</h2>
+    <div class="statement">
+      <div class="stm-head"><span>System</span><span>What it does</span><span>How we measure it</span></div>
+      <div class="stm-row"><span class="item">Measures we track</span><span class="how">One dashboard for the team and for each customer.</span><span class="how">Answer rate with consent vs before · days to go live · consents created and withdrawn · fake calls flagged · cost per connected call · share of revenue from the biggest customer.</span></div>
+      <div class="stm-row"><span class="item">Pilot process</span><span class="how">An 8-week paid pilot, priced per answered call, with a success target agreed at the start.</span><span class="how">Pilots converted to contracts; answer-rate uplift per pilot.</span></div>
+      <div class="stm-row"><span class="item">Privacy and consent governance</span><span class="how">Audit log of every consent, Korea's ISMS-P security certification, regular consent-policy review.</span><span class="how">Audit findings; time to honour a withdrawal.</span></div>
+      <div class="stm-row"><span class="item">Dependency risk list</span><span class="how">Every outside dependency with a backup supplier and a trigger for switching.</span><span class="how">No supplier or customer above an agreed share.</span></div>
+      <div class="stm-row"><span class="item">Pricing review</span><span class="how">Per answered call for institutions, plus the optional ₩3,000 priority call for people.</span><span class="how">Margin per connected call; priority uptake.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- REFERENCES -->
+<section id="strategy-sources" class="tint-surface">
+  <div class="wrap">
+    <p class="eyebrow">References</p>
+    <h2>The evidence behind our strategy</h2>
+    <p class="prose">Collected 12 Oct 2026. Vendor answer-rate figures are the vendors' own; the bank-liability bill is still pending.</p>
+    <div class="src-grid">
+      <div><h4>Voice phishing liability</h4><ul>
+        <li><a class="ref" href="https://www.koreatimes.co.kr/economy/20260729/banks-face-full-liability-for-voice-phishing-compensation" target="_blank" rel="noopener">Banks face full liability for voice phishing compensation · Korea Times</a></li>
+        <li><a class="ref" href="https://www.koreatimes.co.kr/economy/20260727/banks-push-back-against-proposed-no-fault-compensation-for-voice-phishing-victims" target="_blank" rel="noopener">Banks push back against no-fault compensation · Korea Times</a></li>
+        <li><a class="ref" href="https://www.asiae.co.kr/en/article/in-depth/2026100815284602268" target="_blank" rel="noopener">FSC chairman at 2026 parliamentary audit · Asia Business Daily</a></li>
+        <li><a class="ref" href="https://en.sedaily.com/finance/2026/04/01/no-fault-voice-phishing-liability-could-cost-financial" target="_blank" rel="noopener">Liability could cost up to ₩281.1bn a year · Seoul Economic Daily</a></li></ul></div>
+      <div><h4>Caller display today</h4><ul>
+        <li><a class="ref" href="https://enterprise.kt.com/pd/P_PD_CC_TE_006.do" target="_blank" rel="noopener">KT 발신정보알리미 · KT Enterprise</a></li>
+        <li><a class="ref" href="https://biz.skbroadband.com/page.do?menu_id=P01030400" target="_blank" rel="noopener">발신자정보표시 (비즈레터링) · SK Broadband</a></li>
+        <li><a class="ref" href="https://www.lguplus.com/biz/all/telecom/lines/domestic/B000000024" target="_blank" rel="noopener">전국대표번호 · 비주얼링 · LG U+</a></li>
+        <li><a class="ref" href="https://news.sktelecom.com/198590" target="_blank" rel="noopener">RCS brand registration centre · SKT Newsroom</a></li>
+        <li><a class="ref" href="https://www.apple.com/au/newsroom/2024/10/apple-expands-tools-to-help-businesses-connect-with-customers" target="_blank" rel="noopener">Business Caller ID · Apple Newsroom</a></li>
+        <li><a class="ref" href="https://www.businesswire.com/news/home/20250402239592/en/Hiya-and-Samsung-Extend-Strategic-Partnership-Through-2028" target="_blank" rel="noopener">Hiya and Samsung extend partnership · Business Wire</a></li>
+        <li><a class="ref" href="https://support.exotel.com/support/solutions/articles/3000112380-google-verified-calls" target="_blank" rel="noopener">Google Verified Calls shut down · Exotel</a> · <a class="ref" href="https://support.telnyx.com/en/articles/5941652-google-verified-calls-faq" target="_blank" rel="noopener">Telnyx</a></li></ul></div>
+      <div><h4>Answer rates</h4><ul>
+        <li><a class="ref" href="https://www.nuso.cloud/blog/branding-calls-in-a-trust-based-era" target="_blank" rel="noopener">CTIA 2025 consumer figures · Nuso</a></li>
+        <li><a class="ref" href="https://transnexus.com/blog/2025/branded-calling-improves-trust-call-answer-rates/" target="_blank" rel="noopener">Branded calling improves answer rates · TransNexus</a></li>
+        <li><a class="ref" href="https://www.fierce-network.com/wireless/first-orion-surpasses-1-billion-branded-calls" target="_blank" rel="noopener">First Orion passes 1 billion branded calls · Fierce Network</a></li></ul></div>
+      <div><h4>Regulation</h4><ul>
+        <li><a class="ref" href="https://m.ddaily.co.kr/page/view/2026011915062265051" target="_blank" rel="noopener">Banking SaaS rules relaxed · 디지털데일리</a> · <a class="ref" href="https://zdnet.co.kr/view/?no=20260420161504" target="_blank" rel="noopener">ZDNet Korea</a></li>
+        <li><a class="ref" href="https://www.unicornfactory.co.kr/article/2024071509272854395" target="_blank" rel="noopener">Innovative financial service review times · 유니콘팩토리</a></li>
+        <li><a class="ref" href="https://www.telecompaper.com/news/kt-gets-approval-to-run-real-time-voice-phishing-detection--1516041" target="_blank" rel="noopener">KT sandbox approval · Telecompaper</a></li>
+        <li><a class="ref" href="https://edaily.co.kr/News/Read?mediaCodeNo=257&newsId=05546486645448264" target="_blank" rel="noopener">Number-spoofing device ban · 이데일리</a> · <a class="ref" href="https://www.dailysecu.com/news/articleView.html?idxno=206705" target="_blank" rel="noopener">데일리시큐</a></li>
+        <li><a class="ref" href="https://www.koreatimes.co.kr/economy/policy/20251029/korea-launches-ai-based-platform-to-bolster-fight-against-voice-phishing" target="_blank" rel="noopener">ASAP phishing data platform · Korea Times</a></li></ul></div>
+      <div><h4>Market</h4><ul>
+        <li><a class="ref" href="https://www.digitaltoday.co.kr/jp/view/55415/voice-spam-doubles-in-2025-h2-after-mobile-handset-subsidy-law-repeal" target="_blank" rel="noopener">Voice spam doubles in H2 2025 · Digital Today</a> · <a class="ref" href="https://www.radiokorea.com/news/article.php?uid=495267" target="_blank" rel="noopener">Radio Korea</a></li>
+        <li><a class="ref" href="https://kbthink.com/life/daily/bank-waiting-time.html" target="_blank" rel="noopener">KB in-app booking · KB Think</a> · <a class="ref" href="https://www.smarttoday.co.kr/ko-kr/articles/87156" target="_blank" rel="noopener">KB video consultation patent · SmartToday</a></li>
+        <li><a class="ref" href="https://blog.bizgo.io/inside/alimtalk-price-by-volume/" target="_blank" rel="noopener">알림톡 pricing by volume · Bizgo</a> · <a class="ref" href="https://blog.bizgo.io/?p=3317" target="_blank" rel="noopener">RCS vs Kakao · Bizgo</a></li>
+        <li><a class="ref" href="https://www.newstomato.com/ReadNews.aspx?no=802521" target="_blank" rel="noopener">Clinic records systems · 뉴스토마토</a></li></ul></div>
+      <div><h4>Platform strategy</h4><ul>
+        <li><a class="ref" href="https://platformchronicles.substack.com/p/the-chicken-and-egg-problem-of-marketplaces" target="_blank" rel="noopener">The chicken-and-egg problem of marketplaces</a></li>
+        <li><a class="ref" href="https://www.raftlabs.com/blog/two-sided-marketplace-cold-start" target="_blank" rel="noopener">Solving the cold-start problem · RaftLabs</a></li></ul></div>
     </div>
   </div>
 </section>
@@ -1224,7 +1365,7 @@
         { label:'Choose the time', note:function(){ return state.priority ? 'You chose "Call me now" for ₩3,000: an agent calls within 1 minute.' : 'Pick a free day and one-hour window, or pay ₩3,000 to be called right now.'; }, why:function(){ return state.priority ? 'Premium is optional and only speeds up calls you asked for. Fraud and security calls are always free.' : 'You decide when, not the call-centre queue. Free is the default; priority is there for when minutes matter more than money.'; }, screen:pickWindow },
         { label:function(){ return state.priority ? 'Pay with PASS' : 'Confirm with PASS'; }, note:function(){ return state.priority ? 'The same summary, plus the price. You pay only if the call connects within 1 minute.' : 'A summary of exactly what you are agreeing to, confirmed with the PASS check people already trust.'; }, why:'We build on PASS for identity. PASS proves who you are; Yeonrak proves what you agreed to.', screen:reviewConsent },
         { label:function(){ return state.priority ? 'Calling you now' : 'Call booked'; }, note:'A confirmation, plus a reminder of what the real call will look like.', why:'People learn what a legitimate call looks like, so they can spot a fake one.', screen:booked },
-        { label:'The verified call arrives', note:'At the chosen time the call screen shows the purpose, the window you asked for, and when you agreed.', why:'Competitors answer "who is calling?". We also answer "why?" and "did I agree?".', screen:function(){ return incoming({ time:slotStart(), purpose:state.purpose, askedLabel:'You asked for', asked:askedFor(), agreed:'Wed 7 Oct, 09:41' }); } },
+        { label:'The verified call arrives', note:'At the chosen time the call screen shows the purpose, the window you asked for, and when you agreed.', why:'Competitors answer "who is calling?". We also answer "why?" and "did I agree?". (Showing the purpose on the call screen itself needs a carrier or phone-maker partnership; at launch it appears in the KakaoTalk or text message before the call.)', screen:function(){ return incoming({ time:slotStart(), purpose:state.purpose, askedLabel:'You asked for', asked:askedFor(), agreed:'Wed 7 Oct, 09:41' }); } },
         { label:'Straight to the point', note:'The agent already knows why you wanted the call. There is no menu and no re-verification.', why:'Institutions reach people who want to talk, and call-centre staff get conversations instead of rejection.', screen:function(){ return inCall({ time:slotStart(), text:'"Hello, this is ' + BANK + ' calling about your <b>' + esc(state.purpose.toLowerCase()) + '</b>, as you requested. You are already verified, so we can start right away."' }); } }
       ]
     },
